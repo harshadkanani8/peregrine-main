@@ -9,22 +9,20 @@
  *  Peregrine++ Web Application Framework
  *  Author: Harshad M. Kanani
  *  Copyright (c) 2026 Harshad Kanani. All rights reserved.
+ *  SPDX-License-Identifier: Apache-2.0
  * =========================================================================
  */
 
 // ============================================================================
 // peregrine/session.hpp
 //
-// 100% Peregrine-compatible session architecture matching Pallets Peregrine src/peregrine/sessions.py:
-// - SessionMixin & SecureCookieSession data container
-// - NullSession safety & error semantics
-// - Pluggable SessionInterface base class (for Redis, DB, or custom session stores)
-// - SecureCookieSessionInterface (default itsdangerous HMAC-SHA256 signed cookies)
-// - Key rotation fallbacks (SECRET_KEY_FALLBACKS)
-// - Expiration & Inactivity lifetime management
-// - SameSite, HttpOnly, Secure, Domain, Path, and Partitioned (CHIPS) flags
-// - Automatic "Vary: Cookie" header propagation on session access
-// Part of the Peregrine C++ Web Framework.
+// ============================================================================
+// Session Management
+//
+// Provides session storage, signed session cookies, session lifetime
+// management, key rotation support, and cookie security configuration.
+//
+// This implementation is independently written in C++ for Peregrine++.
 // ============================================================================
 #pragma once
 
@@ -197,10 +195,10 @@ private:
 };
 
 // ============================================================================
-// 2. Cryptographic Token Engine (itsdangerous URLSafeTimedSerializer)
+// 2. Signed Session Token Engine
 // ============================================================================
 
-// Signs session data into a token:
+// Signs session data into a timestamped HMAC-authenticated token.
 //   base64url(json) + "." + timestamp_seconds + "." + base64url(hmac_sha256)
 inline std::string sign_session(const std::string& secret_key,
                                 const std::map<std::string, std::string>& session_data,

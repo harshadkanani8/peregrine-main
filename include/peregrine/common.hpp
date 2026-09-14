@@ -9,6 +9,7 @@
  *  Peregrine++ Web Application Framework
  *  Author: Harshad M. Kanani
  *  Copyright (c) 2026 Harshad Kanani. All rights reserved.
+ *  SPDX-License-Identifier: Apache-2.0
  * =========================================================================
  */
 
