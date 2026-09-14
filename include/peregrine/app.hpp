@@ -9,6 +9,7 @@
  *  Peregrine++ Web Application Framework
  *  Author: Harshad M. Kanani
  *  Copyright (c) 2026 Harshad Kanani. All rights reserved.
+ *  SPDX-License-Identifier: Apache-2.0
  * =========================================================================
  */
 
@@ -348,6 +349,7 @@ public:
         std::cout << "             Peregrine++ C++ Web Framework     \n";
         std::cout << "  Author   : Harshad M. Kanani                 \n";
         std::cout << "  Copyright: (c) 2026 Harshad Kanani. All rights reserved.\n";
+        std::cout << "  License  : Apache License 2.0 (Apache-2.0)   \n";
         std::cout << "======================================================================\033[0m\n\n";
 
         std::cout << " * Serving Peregrine C++ Web Framework\n";

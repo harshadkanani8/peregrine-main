@@ -4,7 +4,7 @@
 [![Design](https://img.shields.io/badge/Architecture-Header--Only-success.svg)](#-framework-architecture)
 [![Tests](https://img.shields.io/badge/Tests-52%2F52%20Passed-brightgreen.svg)](tests/)
 [![Platforms](https://img.shields.io/badge/Platforms-Linux%20%7C%20macOS%20%7C%20Windows-lightgrey.svg)](#-build--installation)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 
 > A lightweight, modular, and high-performance C++11 web application framework. Peregrine brings modern, ergonomic web development to the strict and performant world of native C++.
 
@@ -228,8 +228,14 @@ For complete instructions on writing unit tests and using the in-memory `TestCli
 - [**Peregrine API Reference**](docs/api_reference.md): Technical manual documenting classes, methods, and types.
 - [**Peregrine Testing Guide**](tests/README.md): In-memory testing manual with `TestClient` API reference and examples.
 - [**Application Examples Directory**](examples/README.md): Step-by-step tutorials and runnable sample projects.
+- [**Third-Party Licenses**](THIRD_PARTY_LICENSES.md): Details on external dependencies (OpenSSL, pthreads, Winsock).
 - [**CMake Guide**](CMAKE_README.md): Section-by-section breakdown of the modern CMake build configuration.
 
 ---
 
-*Peregrine C++ Web Framework is released under the MIT License.*
+## 📄 License
+
+Peregrine C++ Web Framework is open-source software licensed under the **[Apache License, Version 2.0](LICENSE)**.  
+See the [LICENSE](LICENSE), [NOTICE](NOTICE), and [THIRD_PARTY_LICENSES](THIRD_PARTY_LICENSES.md) files for details.
+
+*Copyright (c) 2026 Harshad Kanani. All rights reserved.*
