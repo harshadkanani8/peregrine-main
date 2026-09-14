@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{site_title}}</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            margin: 0;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #0f172a;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 12px;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 16px;
+            margin-top: 24px;
+        }
+        .card {
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 16px;
+            background: #ffffff;
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+        }
+        .price {
+            font-size: 1.25em;
+            font-weight: bold;
+            color: #16a34a;
+            margin: 8px 0;
+        }
+        .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            font-size: 0.8em;
+            border-radius: 4px;
+            background: #e0f2fe;
+            color: #0369a1;
+        }
+        footer {
+            margin-top: 40px;
+            font-size: 0.85em;
+            color: #64748b;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🦅 {{site_title}}</h1>
+        <p>Welcome, <strong>{{user_name}}</strong>! Below is the current catalog rendered using Peregrine's single-pass template engine.</p>
+
+        <h2>Available Products</h2>
+        <div class="product-grid">
+            {{#each products}}
+            <div class="card">
+                <h3>{{this.name}}</h3>
+                <div class="price">{{this.price}}</div>
+                <div class="badge">{{this.category}}</div>
+                <p style="font-size: 0.9em; color: #475569;">{{this.description}}</p>
+            </div>
+            {{/each}}
+        </div>
+
+        <footer>
+            <p>&copy; {{current_year}} Peregrine C++ Web Framework. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
