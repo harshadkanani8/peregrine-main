@@ -267,5 +267,11 @@ app.error_handler(500, [](Request& req) {
 
 ---
 
-## What's Next?
-Peregrine gives you the building blocks for modern web architecture. Combined with a powerful C++ ORM or database driver, you can build incredibly fast, type-safe web applications that are just as easy to maintain as their Python equivalents.
+## 8. What's Next?
+
+Peregrine gives you the building blocks for modern, high-performance web architecture:
+
+- **[Application Examples](../examples/)**: Explore runnable, real-world examples including a RESTful CRUD API, authenticated sessions, HTML templating, and multipart file uploads.
+- **[Testing Guide](../tests/README.md)**: Learn how to test your applications using the in-memory `TestClient` without network overhead.
+- **[API Reference](api_reference.md)**: Consult the complete technical manual for all Peregrine classes, methods, and types.
+

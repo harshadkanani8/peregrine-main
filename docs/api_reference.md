@@ -273,11 +273,28 @@ app.run(config);
 ```
 
 ### JSON Handling
-Peregrine uses a robust, built-in JSON library (`peregrine::Json`).
-* Creation: `Json j = Json::object {{"name", "Test"}, {"id", 1}};`
-* Array: `Json a = Json::array {1, 2, 3};`
-* Serialization: `j.dump()`
-* Deserialization: `Json::parse(string)`
+Peregrine uses a robust, built-in JSON engine (`peregrine::Json`).
+* Object creation:
+  ```cpp
+  Json j = Json::object();
+  j["name"] = "Test";
+  j["id"] = 1;
+  ```
+* Array creation:
+  ```cpp
+  Json a = Json::array();
+  a.push_back("item1");
+  a.push_back(42);
+  ```
+* Serialization: `std::string json_str = j.dump();`
+* Deserialization: `Json parsed = Json::parse(json_str);`
+
+---
+
+*Related Documentation:*
+- [**Peregrine User Guide**](user_guide.md)
+- [**Peregrine Testing Guide**](../tests/README.md)
+- [**Application Examples**](../examples/README.md)
 
 ---
 *End of API Reference.*
