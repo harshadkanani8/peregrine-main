@@ -71,12 +71,12 @@
   // ==========================================================================
   document.querySelectorAll(".copy-btn").forEach((btn) => {
     btn.addEventListener("click", () => {
-      const wrapper = btn.closest(".code-block-wrapper");
+      const wrapper = btn.closest(".code-block-wrapper") || btn.closest(".hero-clone-box");
       if (!wrapper) return;
       const code = wrapper.querySelector("code");
       if (!code) return;
 
-      navigator.clipboard.writeText(code.innerText).then(() => {
+      navigator.clipboard.writeText(code.innerText.trim()).then(() => {
         const originalText = btn.innerHTML;
         btn.innerHTML = `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Copied!`;
         btn.classList.add("copied");

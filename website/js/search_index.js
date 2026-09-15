@@ -19,6 +19,13 @@ const PEREGRINE_SEARCH_INDEX = [
     keywords: ["quickstart", "hello world", "app.get", "app.run", "starter", "compile", "curl"]
   },
   {
+    id: "download",
+    title: "Download & Installation Options",
+    category: "Getting Started",
+    snippet: "Download Peregrine via Git clone, CMake FetchContent, source ZIP archive, or offline PDF documentation.",
+    keywords: ["download", "github", "clone", "install", "cmake", "fetchcontent", "zip", "tar", "pdf", "release", "git"]
+  },
+  {
     id: "architecture",
     title: "Request-Response Lifecycle Architecture",
     category: "Getting Started",

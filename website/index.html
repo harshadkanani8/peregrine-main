@@ -36,6 +36,7 @@
     <nav class="nav-menu">
       <a href="#home" class="nav-link">Home</a>
       <a href="#quickstart" class="nav-link">Quickstart</a>
+      <a href="#download" class="nav-link">Download</a>
       <a href="#architecture" class="nav-link">Architecture</a>
       <a href="#module-app" class="nav-link">Modules</a>
       <a href="#module-config" class="nav-link">Config</a>
@@ -45,9 +46,24 @@
     </nav>
 
     <div class="nav-actions">
+      <a href="https://github.com/hmkanani/peregrine-main" target="_blank" rel="noopener" class="nav-icon-link"
+        aria-label="GitHub Repository" title="GitHub Repository (hmkanani/peregrine-main)">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+        </svg>
+      </a>
       <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Theme" title="Toggle Light/Dark Theme">
         <!-- Icon injected via JS -->
       </button>
+      <a href="#download" class="button button-outline" style="display: flex; align-items: center; gap: 6px;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="7 10 12 15 17 10"></polyline>
+          <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+        <span>Download</span>
+      </a>
       <a href="#quickstart" class="button button-primary">Get Started</a>
     </div>
   </header>
@@ -86,6 +102,7 @@
           <div class="nav-section-list">
             <a href="#overview" class="nav-item-link">Overview & Philosophy</a>
             <a href="#quickstart" class="nav-item-link">Quickstart & Hello World</a>
+            <a href="#download" class="nav-item-link">Download & Installation</a>
             <a href="#architecture" class="nav-item-link">Execution Lifecycle (11-Step)</a>
           </div>
         </div>
@@ -186,8 +203,38 @@
             </p>
             <div class="hero-actions">
               <a href="#quickstart" class="button button-primary">Get Started</a>
+              <a href="#download" class="button button-secondary"
+                style="display: inline-flex; align-items: center; gap: 8px;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                <span>Download v1.0.0</span>
+              </a>
+              <a href="https://github.com/hmkanani/peregrine-main" target="_blank" rel="noopener"
+                class="button button-outline" style="display: inline-flex; align-items: center; gap: 8px;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                </svg>
+                <span>GitHub</span>
+              </a>
               <a href="#architecture" class="button button-outline">View Architecture</a>
             </div>
+
+            <!-- Quick Clone Snippet Box -->
+            <div class="hero-clone-box">
+              <span class="hero-clone-prefix">$</span>
+              <code class="hero-clone-cmd">git clone https://github.com/hmkanani/peregrine-main.git</code>
+              <button class="hero-clone-copy copy-btn" title="Copy to clipboard" aria-label="Copy clone command">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+              </button>
+            </div>
+
             <div class="hero-meta-strip">
               <div class="hero-meta-item"><span>⚡</span> <span>0 External Dependencies</span></div>
               <div class="hero-meta-item"><span>🔒</span> <span>HMAC-SHA256 Sessions</span></div>
@@ -825,6 +872,299 @@ Connection: close
                 <span class="article-nav-label">← Previous</span>
                 <span class="article-nav-title">Overview &amp; Philosophy</span>
               </a>
+              <a href="#download" class="article-nav-card next">
+                <span class="article-nav-label">Next →</span>
+                <span class="article-nav-title">Download &amp; Installation Options</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- ================================================================
+               ARTICLE: DOWNLOAD & INSTALLATION
+               ================================================================ -->
+          <div class="doc-article-content" data-doc-id="download" data-category="Getting Started"
+            data-title="Download & Installation Options">
+            <header class="article-header">
+              <span class="article-badge">Getting Started</span>
+              <h1 class="article-title">Download &amp; Installation Options</h1>
+              <p class="article-lead">
+                Peregrine is a 100% header-only C++ web framework with zero mandatory dependencies. Choose your
+                preferred
+                integration method below: Git repository clone, modern CMake FetchContent, source release archive,
+                standalone header copy, or pre-compiled offline PDF documentation manuals.
+              </p>
+              <div class="article-meta">
+                <span>Release: v1.0.0 Stable</span>
+                <span>•</span>
+                <span>License: Apache-2.0</span>
+                <span>•</span>
+                <span>GitHub: <a href="https://github.com/hmkanani/peregrine-main" target="_blank" rel="noopener"
+                    style="color: var(--accent); text-decoration: underline;">hmkanani/peregrine-main</a></span>
+              </div>
+            </header>
+
+            <div class="rich-text">
+              <h2>Quick Distribution Cards</h2>
+              <p>Select an installation or download path suited to your engineering workflow:</p>
+
+              <div class="download-card-grid">
+
+                <!-- Card 1: GitHub Repository -->
+                <div class="download-card">
+                  <div class="download-card-header">
+                    <span class="download-card-icon">🐙</span>
+                    <span class="download-card-badge">Recommended</span>
+                  </div>
+                  <div class="download-card-title">GitHub Repository</div>
+                  <div class="download-card-desc">
+                    Clone the official source repository to access all 18 headers, production examples, build configs,
+                    and the complete 52-case unit test suite.
+                  </div>
+                  <a href="https://github.com/hmkanani/peregrine-main" target="_blank" rel="noopener"
+                    class="download-card-btn button button-primary">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                    </svg>
+                    <span>View on GitHub →</span>
+                  </a>
+                </div>
+
+                <!-- Card 2: Release ZIP -->
+                <div class="download-card">
+                  <div class="download-card-header">
+                    <span class="download-card-icon">📦</span>
+                    <span class="download-card-badge">v1.0.0 Stable</span>
+                  </div>
+                  <div class="download-card-title">Source ZIP Bundle</div>
+                  <div class="download-card-desc">
+                    Download the complete, packaged archive of Peregrine v1.0.0 directly from GitHub for offline
+                    deployment and air-gapped systems.
+                  </div>
+                  <a href="https://github.com/hmkanani/peregrine-main/archive/refs/heads/main.zip"
+                    class="download-card-btn button button-secondary">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                      <polyline points="7 10 12 15 17 10"></polyline>
+                      <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    <span>Download ZIP Archive</span>
+                  </a>
+                </div>
+
+                <!-- Card 3: CMake FetchContent -->
+                <div class="download-card">
+                  <div class="download-card-header">
+                    <span class="download-card-icon">⚡</span>
+                    <span class="download-card-badge">Modern C++</span>
+                  </div>
+                  <div class="download-card-title">CMake FetchContent</div>
+                  <div class="download-card-desc">
+                    Embed Peregrine directly into your modern CMake build pipeline with zero git submodules or manual
+                    path tracking.
+                  </div>
+                  <a href="#cmake-fetchcontent" class="download-card-btn button button-outline">
+                    <span>View CMake Setup ↓</span>
+                  </a>
+                </div>
+
+                <!-- Card 4: Header Drop-in -->
+                <div class="download-card">
+                  <div class="download-card-header">
+                    <span class="download-card-icon">🦅</span>
+                    <span class="download-card-badge">Header-Only</span>
+                  </div>
+                  <div class="download-card-title">Direct Header Ingestion</div>
+                  <div class="download-card-desc">
+                    Copy the <code>include/peregrine</code> tree directly into your project's include folder and include
+                    <code>&lt;peregrine/peregrine.hpp&gt;</code>.
+                  </div>
+                  <a href="#manual-ingestion" class="download-card-btn button button-outline">
+                    <span>Ingestion Guide ↓</span>
+                  </a>
+                </div>
+
+              </div>
+
+              <!-- Detailed Section 1: Git Clone -->
+              <h2 id="git-clone">1. Git Repository Clone &amp; Submodules</h2>
+              <p>Clone the official repository directly from GitHub:</p>
+
+              <div class="code-block-wrapper">
+                <div class="code-header">
+                  <span class="code-lang-tag">Terminal</span>
+                  <button class="copy-btn">Copy</button>
+                </div>
+                <pre class="code-content"><code><span class="hl-comment"># Clone the official Peregrine repository</span>
+git clone https://github.com/hmkanani/peregrine-main.git
+
+<span class="hl-comment"># Alternatively, add as a Git submodule in an existing C++ project:</span>
+git submodule add https://github.com/hmkanani/peregrine-main.git external/peregrine</code></pre>
+              </div>
+
+              <!-- Detailed Section 2: CMake FetchContent -->
+              <h2 id="cmake-fetchcontent">2. Modern CMake Integration (FetchContent)</h2>
+              <p>
+                In modern CMake (version 3.14+), you can declare Peregrine as an external dependency without checking in
+                third-party source code. Add the following to your <code>CMakeLists.txt</code>:
+              </p>
+
+              <div class="code-block-wrapper">
+                <div class="code-header">
+                  <span class="code-lang-tag">CMake</span>
+                  <button class="copy-btn">Copy</button>
+                </div>
+                <pre class="code-content"><code><span class="hl-function">cmake_minimum_required</span>(VERSION 3.14)
+<span class="hl-function">project</span>(MyService CXX)
+
+<span class="hl-function">set</span>(CMAKE_CXX_STANDARD 11)
+<span class="hl-function">set</span>(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+<span class="hl-comment"># 1. Fetch Peregrine from GitHub</span>
+<span class="hl-function">include</span>(FetchContent)
+<span class="hl-function">FetchContent_Declare</span>(
+    peregrine
+    GIT_REPOSITORY https://github.com/hmkanani/peregrine-main.git
+    GIT_TAG        main <span class="hl-comment"># or tag: v1.0.0</span>
+)
+<span class="hl-function">FetchContent_MakeAvailable</span>(peregrine)
+
+<span class="hl-comment"># 2. Link header-only target to your executable</span>
+<span class="hl-function">add_executable</span>(my_service src/main.cpp)
+<span class="hl-function">target_link_libraries</span>(my_service PRIVATE peregrine)</code></pre>
+              </div>
+
+              <!-- Detailed Section 3: Direct Header Ingestion -->
+              <h2 id="manual-ingestion">3. Standalone Header-Only Ingestion</h2>
+              <p>
+                To vendor Peregrine without Git or CMake, simply copy the <code>include/peregrine</code> folder into
+                your
+                source tree and add it to your compiler's include search paths:
+              </p>
+
+              <div class="code-block-wrapper">
+                <div class="code-header">
+                  <span class="code-lang-tag">Directory Tree</span>
+                  <button class="copy-btn">Copy</button>
+                </div>
+                <pre class="code-content"><code>my_project/
+├── include/
+│   └── peregrine/              <span class="hl-comment">&lt;-- Copy include/peregrine here</span>
+│       ├── app.hpp
+│       ├── blueprint.hpp
+│       ├── common.hpp
+│       ├── config.hpp
+│       ├── connection.hpp
+│       ├── csrf.hpp
+│       ├── helpers.hpp
+│       ├── json.hpp
+│       ├── peregrine.hpp       <span class="hl-comment">&lt;-- Single master umbrella header</span>
+│       ├── request.hpp
+│       ├── response.hpp
+│       ├── routing.hpp
+│       ├── server.hpp
+│       ├── session.hpp
+│       ├── template.hpp
+│       ├── thread_pool.hpp
+│       ├── types.hpp
+│       └── view.hpp
+└── src/
+    └── main.cpp</code></pre>
+              </div>
+
+              <!-- Detailed Section 4: Offline PDF Manuals -->
+              <h2 id="offline-docs">4. Offline PDF Documentation Manuals</h2>
+              <p>
+                For developers working in offline environments, high-security facilities, or embedded labs without
+                active internet access, Peregrine provides pre-compiled PDF documentation manuals:
+              </p>
+
+              <div class="api-table-wrapper">
+                <table class="api-table">
+                  <thead>
+                    <tr>
+                      <th>Document Name</th>
+                      <th>Format</th>
+                      <th>File Size</th>
+                      <th>Description</th>
+                      <th>Direct Download</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Peregrine User Guide</strong></td>
+                      <td><code>PDF</code></td>
+                      <td>2.24 MB</td>
+                      <td>Complete developer handbook covering getting started, tutorials, recipes, and testing.</td>
+                      <td>
+                        <a href="downloads/peregrine_user_guide.pdf" download class="button button-outline"
+                          style="padding: 4px 10px; font-size: 0.8rem; display: inline-flex; align-items: center; gap: 4px;">
+                          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                          </svg>
+                          <span>Download PDF</span>
+                        </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>API Reference Manual</strong></td>
+                      <td><code>PDF</code></td>
+                      <td>3.33 MB</td>
+                      <td>Comprehensive technical reference for all 18 headers, classes, methods, and functions.</td>
+                      <td>
+                        <a href="downloads/peregrine_api_reference.pdf" download class="button button-outline"
+                          style="padding: 4px 10px; font-size: 0.8rem; display: inline-flex; align-items: center; gap: 4px;">
+                          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                          </svg>
+                          <span>Download PDF</span>
+                        </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>Architecture Overview</strong></td>
+                      <td><code>PDF</code></td>
+                      <td>297 KB</td>
+                      <td>High-level architectural philosophy, concurrency model, and technical specifications.</td>
+                      <td>
+                        <a href="downloads/Peregrine_Document.pdf" download class="button button-outline"
+                          style="padding: 4px 10px; font-size: 0.8rem; display: inline-flex; align-items: center; gap: 4px;">
+                          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                          </svg>
+                          <span>Download PDF</span>
+                        </a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="callout tip">
+                <div class="callout-icon">💡</div>
+                <div class="callout-content">
+                  <strong>Open Source Repository:</strong> Contributions, bug reports, and pull requests are welcomed on
+                  GitHub at <a href="https://github.com/hmkanani/peregrine-main" target="_blank" rel="noopener"
+                    style="color: var(--accent); text-decoration: underline;">https://github.com/hmkanani/peregrine-main</a>.
+                </div>
+              </div>
+
+            </div>
+
+            <div class="article-nav-grid">
+              <a href="#quickstart" class="article-nav-card prev">
+                <span class="article-nav-label">← Previous</span>
+                <span class="article-nav-title">Quickstart &amp; Hello World</span>
+              </a>
               <a href="#architecture" class="article-nav-card next">
                 <span class="article-nav-label">Next →</span>
                 <span class="article-nav-title">Request-Response Lifecycle Architecture</span>
@@ -1035,9 +1375,9 @@ Connection: close
             </div>
 
             <div class="article-nav-grid">
-              <a href="#quickstart" class="article-nav-card prev">
+              <a href="#download" class="article-nav-card prev">
                 <span class="article-nav-label">← Previous</span>
-                <span class="article-nav-title">Quickstart &amp; Hello World</span>
+                <span class="article-nav-title">Download &amp; Installation Options</span>
               </a>
               <a href="#module-app" class="article-nav-card next">
                 <span class="article-nav-label">Next →</span>
@@ -4757,6 +5097,11 @@ Content-Type: application/json
           <div class="footer-links">
             <a href="#home" class="footer-link">Home</a>
             <a href="#quickstart" class="footer-link">Quickstart</a>
+            <a href="#download" class="footer-link">Download</a>
+            <a href="https://github.com/hmkanani/peregrine-main" target="_blank" rel="noopener"
+              class="footer-link">GitHub</a>
+            <a href="https://github.com/hmkanani/peregrine-main/issues" target="_blank" rel="noopener"
+              class="footer-link">Issues</a>
             <a href="#module-app" class="footer-link">Modules</a>
             <a href="#guide-rest" class="footer-link">Recipes</a>
             <a href="#roadmap" class="footer-link">Roadmap</a>
