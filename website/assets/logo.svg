@@ -1,0 +1,42 @@
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="falconBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="50%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#090d16"/>
+    </linearGradient>
+    <linearGradient id="falconWingPrimary" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="60%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#0369a1"/>
+    </linearGradient>
+    <linearGradient id="falconWingSecondary" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#60a5fa"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+    <linearGradient id="falconBeak" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+    <filter id="falconGlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="1" stdDeviation="1" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Background Shield / Rounded Squircle -->
+  <rect width="40" height="40" rx="10" fill="url(#falconBg)"/>
+  <rect x="0.5" y="0.5" width="39" height="39" rx="9.5" stroke="#334155" stroke-width="1"/>
+
+  <!-- Sleek Aerodynamic Peregrine Falcon Emblem -->
+  <g filter="url(#falconGlow)">
+    <!-- Primary Swept Wing -->
+    <path d="M8 23L16 11L28 11L20 18L32 18L18 31L20 23L13 23L8 23Z" fill="url(#falconWingPrimary)"/>
+    <!-- Secondary Wing Layer (Depth) -->
+    <path d="M16 11L28 11L23 16L18 16L16 11Z" fill="url(#falconWingSecondary)" opacity="0.85"/>
+    <!-- Falcon Head & Sharp Beak -->
+    <path d="M28 11L33 14L30 17L28 15L28 11Z" fill="url(#falconBeak)"/>
+    <!-- Falcon Eye -->
+    <circle cx="26.5" cy="13.2" r="1.1" fill="#ffffff"/>
+    <circle cx="26.5" cy="13.2" r="0.6" fill="#0f172a"/>
+  </g>
+</svg>
