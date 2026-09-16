@@ -1,6 +1,6 @@
-# Peregrine Application Examples & Tutorials
+# Peregrine++ Application Examples & Tutorials
 
-Welcome to the **Peregrine Examples Directory**! 
+Welcome to the **Peregrine++ Examples Directory**! 
 
 This repository of practical, ready-to-run example projects illustrates how to build modern web services, RESTful APIs, and secure web applications using the **Peregrine C++ Web Framework**.
 

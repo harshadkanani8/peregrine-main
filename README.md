@@ -1,10 +1,6 @@
-<!-- <p align="center">
-  <img src="website/assets/logo.svg" width="60" height="60" alt="Logo">
-  &nbsp;
-  <strong style="font-size: 32px;">Peregrine++</strong>
-</p> -->
+<table align="center"> <tr> <td align="center"> <img src="website/assets/logo.svg" width="80" height="80" alt="Peregrine++ Logo"> </td> <td align="center"> <h1>Peregrine++</h1> </td> </tr> </table>
 
-# 🦅 Peregrine C++ Web Framework
+# Peregrine C++ Web Framework
 
 [![Standard](https://img.shields.io/badge/C%2B%2B-11%20Standard-blue.svg)](https://en.wikipedia.org/wiki/C%2B%2B11)
 [![Design](https://img.shields.io/badge/Architecture-Header--Only-success.svg)](#-framework-architecture)
