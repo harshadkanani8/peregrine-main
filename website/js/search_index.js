@@ -138,6 +138,48 @@ const PEREGRINE_SEARCH_INDEX = [
     keywords: ["spa", "react", "vue", "vite", "frontend", "static", "index.html", "routing", "serve_spa"]
   },
   {
+    id: "examples-hub",
+    title: "Runnable Project Examples & Build Hub",
+    category: "Project Examples",
+    snippet: "Five complete, self-contained native C++ web applications: Hello World, REST API, Auth & Sessions, Templates, and File Uploads.",
+    keywords: ["examples", "samples", "demos", "tutorial", "cmake", "projects", "build", "run", "gcc", "clang", "min_gw"]
+  },
+  {
+    id: "example-hello",
+    title: "Example 01: Hello World & Dynamic Routing",
+    category: "Project Examples",
+    snippet: "Minimal HTTP server, text & HTML endpoints, dynamic path parameters (<string:name>), and curl verification.",
+    keywords: ["hello world", "example 01", "get", "path_params", "starter", "minimal", "curl"]
+  },
+  {
+    id: "example-rest",
+    title: "Example 02: RESTful Task API (CRUD & Blueprints)",
+    category: "Project Examples",
+    snippet: "Production JSON microservice with Blueprint routing (/api/v1), thread-safe mutex storage, and full CRUD verbs.",
+    keywords: ["rest", "api", "example 02", "crud", "blueprint", "tasks", "mutex", "lock_guard", "post", "put", "delete", "json"]
+  },
+  {
+    id: "example-auth",
+    title: "Example 03: Authentication & Cookie Sessions",
+    category: "Project Examples",
+    snippet: "Stateless HMAC-SHA256 client-side signed cookies, protected route guards, login/logout, and session debug JSON.",
+    keywords: ["auth", "authentication", "example 03", "sessions", "hmac", "sha256", "cookies", "login", "logout", "tamper", "dashboard"]
+  },
+  {
+    id: "example-templates",
+    title: "Example 04: Mustache Template Rendering",
+    category: "Project Examples",
+    snippet: "Dynamic HTML catalog using single-pass Mustache template engine, TemplateContext, scalar tags, and {{#each}} loops.",
+    keywords: ["templates", "mustache", "example 04", "render_template", "render_string", "html", "each", "loops", "catalog"]
+  },
+  {
+    id: "example-uploads",
+    title: "Example 05: Multipart File Uploads & CWE-22 Defense",
+    category: "Project Examples",
+    snippet: "RFC 7578 multipart/form-data upload processor, CWE-22 Path Traversal defense, binary disk persistence, and JSON reporting.",
+    keywords: ["uploads", "multipart", "example 05", "form-data", "file.save", "cwe-22", "path traversal", "sanitize_filename", "binary"]
+  },
+  {
     id: "roadmap",
     title: "Architectural Roadmap & Framework Benchmarks",
     category: "Reference",

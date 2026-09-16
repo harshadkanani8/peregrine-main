@@ -240,10 +240,25 @@
     if (homeView) homeView.style.display = "none";
     if (articleView) articleView.style.display = "flex";
 
+    // Check if target is a direct article or an inner element
+    let targetDocId = hash;
+    let scrollToElem = null;
+    const directArticle = document.querySelector(`.doc-article-content[data-doc-id="${hash}"]`);
+
+    if (!directArticle) {
+      scrollToElem = document.getElementById(hash);
+      if (scrollToElem) {
+        const parentArticle = scrollToElem.closest(".doc-article-content");
+        if (parentArticle) {
+          targetDocId = parentArticle.getAttribute("data-doc-id");
+        }
+      }
+    }
+
     // Hide all article sections, show the matched article
     let found = false;
     document.querySelectorAll(".doc-article-content").forEach((section) => {
-      const isTarget = section.getAttribute("data-doc-id") === hash;
+      const isTarget = section.getAttribute("data-doc-id") === targetDocId;
       section.style.display = isTarget ? "block" : "none";
       if (isTarget) {
         found = true;
@@ -260,9 +275,12 @@
       // Fallback to home
       homeView.style.display = "flex";
       if (articleView) articleView.style.display = "none";
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else if (scrollToElem) {
+      scrollToElem.scrollIntoView({ behavior: "smooth" });
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
-
-    window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
   window.addEventListener("hashchange", handleRoute);

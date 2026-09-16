@@ -41,6 +41,7 @@
       <a href="#module-app" class="nav-link">Modules</a>
       <a href="#module-config" class="nav-link">Config</a>
       <a href="#guide-rest" class="nav-link">Recipes</a>
+      <a href="#examples-hub" class="nav-link">Examples</a>
       <a href="#roadmap" class="nav-link">Roadmap</a>
       <a href="#api-reference" class="nav-link">API Catalog</a>
     </nav>
@@ -149,6 +150,28 @@
             <a href="#guide-rest" class="nav-item-link">RESTful JSON APIs</a>
             <a href="#guide-auth" class="nav-item-link">User Auth & RBAC</a>
             <a href="#guide-spa" class="nav-item-link">SPA Frontend Hosting</a>
+          </div>
+        </div>
+
+        
+        <!-- Section: Project Examples -->
+        <div class="nav-section">
+          <div class="nav-section-title">
+            <div class="nav-section-title-icon">
+              <span>💻</span>
+              <span>Project Examples</span>
+            </div>
+            <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </div>
+          <div class="nav-section-list">
+            <a href="#examples-hub" class="nav-item-link">Examples Hub &amp; Build Guide</a>
+            <a href="#example-hello" class="nav-item-link">01. Hello World Server</a>
+            <a href="#example-rest" class="nav-item-link">02. RESTful Task API</a>
+            <a href="#example-auth" class="nav-item-link">03. Auth &amp; Cookie Sessions</a>
+            <a href="#example-templates" class="nav-item-link">04. Mustache Templates</a>
+            <a href="#example-uploads" class="nav-item-link">05. Multipart File Uploads</a>
           </div>
         </div>
 
@@ -274,6 +297,13 @@
               <div class="category-card-footer">View recipes →</div>
             </a>
 
+            <a href="#examples-hub" class="category-card">
+              <div class="category-icon-wrapper">💻</div>
+              <div class="category-card-title">Runnable Examples</div>
+              <div class="category-card-desc">5 complete, production-ready applications: Hello World, REST CRUD API, HMAC Sessions, Mustache Templates, and Multipart Uploads.</div>
+              <div class="category-card-footer">Explore examples →</div>
+            </a>
+
             <a href="#api-reference" class="category-card">
               <div class="category-icon-wrapper">🗺️</div>
               <div class="category-card-title">Reference & Roadmap</div>
@@ -291,6 +321,18 @@
             <h2 class="section-title"><span>⭐</span> <span>Featured Modules</span></h2>
           </div>
           <div class="article-grid">
+
+            <a href="#example-rest" class="article-card">
+              <span class="article-badge">Example 02</span>
+              <div class="article-card-title">RESTful Task API Microservice</div>
+              <div class="article-card-desc">Modular Blueprint routing (/api/v1), thread-safe in-memory mutex store, JSON parsing, and full CRUD operations.</div>
+            </a>
+
+            <a href="#example-auth" class="article-card">
+              <span class="article-badge">Example 03</span>
+              <div class="article-card-title">HMAC-SHA256 Auth &amp; Sessions</div>
+              <div class="article-card-desc">Cryptographically signed stateless cookie sessions, tamper detection, login/logout guards, and 0 server memory overhead.</div>
+            </a>
 
             <a href="#module-routing" class="article-card">
               <span class="article-badge">Routing</span>
@@ -984,6 +1026,21 @@ Connection: close
                   </a>
                 </div>
 
+                <!-- Card 5: Runnable Examples -->
+                <div class="download-card">
+                  <div class="download-card-header">
+                    <span class="download-card-icon">💻</span>
+                    <span class="download-card-badge">5 Projects</span>
+                  </div>
+                  <div class="download-card-title">Runnable Examples</div>
+                  <div class="download-card-desc">
+                    5 standalone projects ready to build with CMake or single-command g++: Hello World, REST CRUD API, HMAC Sessions, Mustache Templates, and Multipart File Uploads.
+                  </div>
+                  <a href="#examples-hub" class="download-card-btn button button-outline">
+                    <span>Explore Examples →</span>
+                  </a>
+                </div>
+
               </div>
 
               <!-- Detailed Section 1: Git Clone -->
@@ -1000,6 +1057,22 @@ git clone https://github.com/hmkanani/peregrine-main.git
 
 <span class="hl-comment"># Alternatively, add as a Git submodule in an existing C++ project:</span>
 git submodule add https://github.com/hmkanani/peregrine-main.git external/peregrine</code></pre>
+              </div>
+
+              <!-- Detailed Section 1b: Running Examples -->
+              <h2 id="quick-examples-run">1b. Quick-Start Runnable Examples Pack</h2>
+              <p>To compile and test all five project examples immediately after cloning:</p>
+              <div class="code-block-wrapper">
+                <div class="code-header">
+                  <span class="code-lang-tag">Terminal</span>
+                  <button class="copy-btn">Copy</button>
+                </div>
+                <pre class="code-content"><code># Build all 5 examples concurrently with CMake
+cmake -B build -S examples
+cmake --build build
+
+# Launch the Hello World demo server on 127.0.0.1:8080
+./build/01_hello_world</code></pre>
               </div>
 
               <!-- Detailed Section 2: CMake FetchContent -->
@@ -4698,6 +4771,1958 @@ Content-Type: application/json
                 <span class="article-nav-label">← Previous</span>
                 <span class="article-nav-title">Feature Recipe: User Authentication &amp; RBAC</span>
               </a>
+              <a href="#examples-hub" class="article-nav-card next">
+                <span class="article-nav-label">Next →</span>
+                <span class="article-nav-title">Runnable Examples &amp; Build Hub</span>
+              </a>
+            </div>
+          </div>
+
+
+          
+          <!-- ================================================================
+               ARTICLE: PROJECT EXAMPLES HUB
+               ================================================================ -->
+          <div class="doc-article-content" data-doc-id="examples-hub" data-category="Project Examples"
+            data-title="Runnable Project Examples &amp; Build Hub">
+            <header class="article-header">
+              <span class="article-badge">Project Examples</span>
+              <h1 class="article-title">Runnable Project Examples &amp; Build Hub</h1>
+              <p class="article-lead">
+                Explore 5 complete, standalone, production-ready applications demonstrating Peregrine&#039;s capabilities—from
+                minimal routing and RESTful microservices to cryptographic session auth, Mustache HTML rendering, and RFC 7578 file uploads.
+              </p>
+              <div class="article-meta">
+                <span>Examples: 5 Production Demos</span>
+                <span>•</span>
+                <span>Standard: C++11 Conforming</span>
+                <span>•</span>
+                <span>Location: <code>examples/</code></span>
+              </div>
+            </header>
+
+            <div class="rich-text">
+              <h2>Overview &amp; Architecture of the Examples</h2>
+              <p>
+                The <code>examples/</code> directory contains self-contained applications structured to show best practices
+                when developing with the Peregrine C++ Web Framework. Each project is fully functional, requires zero third-party
+                dependencies beyond standard C++11 and OpenSSL, and includes comprehensive compilation instructions and automated testing commands.
+              </p>
+
+              <div class="flowchart-wrapper">
+                <div style="font-size: 0.8rem; font-weight: 600; color: var(--text-muted); margin-bottom: 8px;">
+                  Figure EX.1: Progression and Architectural Scope of Peregrine Examples
+                </div>
+                <pre class="flowchart-content"><code>+---------------------------------------------------------------------------------------------------------+
+|                               PEREGRINE PROJECT EXAMPLES PORTFOLIO                                      |
++---------------------------------------------------------------------------------------------------------+
+                                                                                                           
+  01_hello_world          --&gt;  Minimal App init, text/html responses, dynamic regex path extraction        
+  02_rest_api             --&gt;  Modular Blueprint (/api/v1), Thread-safe TaskDatabase, JSON AST, full CRUD  
+  03_auth_sessions        --&gt;  HMAC-SHA256 client cookies, login/logout, route protection, JSON debug      
+  04_template_rendering   --&gt;  Mustache engine, {var} substitution, {#each} loops, HTML disk catalog  
+  05_file_upload          --&gt;  RFC 7578 multipart/form-data, CWE-22 Path Traversal defense, disk stream    
+                                                                                                           
++---------------------------------------------------------------------------------------------------------+</code></pre>
+              </div>
+
+              <h2>Examples Index &amp; Capability Matrix</h2>
+              <div class="api-table-wrapper">
+                <table class="api-table">
+                  <thead>
+                    <tr>
+                      <th>Directory</th>
+                      <th>Application Name</th>
+                      <th>Key Concepts Demonstrated</th>
+                      <th>Difficulty</th>
+                      <th>Guide Link</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><code>01_hello_world</code></td>
+                      <td><strong>Hello World Server</strong></td>
+                      <td>App lifecycle, plain-text &amp; HTML routes, dynamic path parameter <code>&lt;string:name&gt;</code>.</td>
+                      <td><span class="badge" style="background: #e8f5e9; color: #2e7d32; padding: 2px 8px; border-radius: 4px; font-weight: 600;">Beginner</span></td>
+                      <td><a href="#example-hello" style="color: var(--accent); font-weight: 600;">View 01 Guide →</a></td>
+                    </tr>
+                    <tr>
+                      <td><code>02_rest_api</code></td>
+                      <td><strong>RESTful Task API</strong></td>
+                      <td>Blueprint routing (<code>/api/v1</code>), <code>after_request</code> CORS middleware, JSON parsing/dumping, thread-safe mutex store.</td>
+                      <td><span class="badge" style="background: #e3f2fd; color: #1565c0; padding: 2px 8px; border-radius: 4px; font-weight: 600;">Intermediate</span></td>
+                      <td><a href="#example-rest" style="color: var(--accent); font-weight: 600;">View 02 Guide →</a></td>
+                    </tr>
+                    <tr>
+                      <td><code>03_auth_sessions</code></td>
+                      <td><strong>Authentication &amp; Sessions</strong></td>
+                      <td>Cryptographic HMAC-SHA256 session cookies, login/logout flow, protected dashboard route guard, session debug JSON.</td>
+                      <td><span class="badge" style="background: #e3f2fd; color: #1565c0; padding: 2px 8px; border-radius: 4px; font-weight: 600;">Intermediate</span></td>
+                      <td><a href="#example-auth" style="color: var(--accent); font-weight: 600;">View 03 Guide →</a></td>
+                    </tr>
+                    <tr>
+                      <td><code>04_template_rendering</code></td>
+                      <td><strong>Mustache Template Rendering</strong></td>
+                      <td>TemplateContext binding, scalar <code>&#123;&#123;var&#125;&#125;</code> replacement, <code>&#123;&#123;#each&#125;&#125;</code> loops, external file &amp; inline rendering.</td>
+                      <td><span class="badge" style="background: #e8f5e9; color: #2e7d32; padding: 2px 8px; border-radius: 4px; font-weight: 600;">Beginner</span></td>
+                      <td><a href="#example-templates" style="color: var(--accent); font-weight: 600;">View 04 Guide →</a></td>
+                    </tr>
+                    <tr>
+                      <td><code>05_file_upload</code></td>
+                      <td><strong>Multipart File Uploads</strong></td>
+                      <td>RFC 7578 multipart/form-data parser, CWE-22 Path Traversal sanitization, binary disk streaming, JSON upload reports.</td>
+                      <td><span class="badge" style="background: #e3f2fd; color: #1565c0; padding: 2px 8px; border-radius: 4px; font-weight: 600;">Intermediate</span></td>
+                      <td><a href="#example-uploads" style="color: var(--accent); font-weight: 600;">View 05 Guide →</a></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2>Repository Directory Layout</h2>
+              <div class="code-block-wrapper">
+                <div class="code-header">
+                  <span class="code-lang-tag">Directory Tree</span>
+                  <button class="copy-btn">Copy</button>
+                </div>
+                <pre class="code-content"><code>peregrine/
+├── include/
+│   └── peregrine/              # Complete header-only framework (18 headers)
+├── examples/
+│   ├── CMakeLists.txt          # Master CMake build configuration for all examples
+│   ├── README.md               # Quickstart overview and compile commands
+│   ├── 01_hello_world/
+│   │   ├── main.cpp            # Minimal server and dynamic routing
+│   │   └── README.md
+│   ├── 02_rest_api/
+│   │   ├── main.cpp            # Production Blueprint REST API with JSON CRUD
+│   │   └── README.md
+│   ├── 03_auth_sessions/
+│   │   ├── main.cpp            # HMAC-SHA256 stateless session cookies &amp; auth
+│   │   └── README.md
+│   ├── 04_template_rendering/
+│   │   ├── main.cpp            # Mustache template driver and inline renderer
+│   │   ├── README.md
+│   │   └── templates/
+│   │       └── index.html      # Responsive HTML product catalog template
+│   └── 05_file_upload/
+│       ├── main.cpp            # RFC 7578 multipart upload with CWE-22 defense
+│       └── README.md
+└── tests/                      # 52 in-memory verification tests</code></pre>
+              </div>
+
+              <h2>Building All Examples (Method 1: CMake)</h2>
+              <p>
+                The cleanest way to build all five examples simultaneously is using CMake. From the project root directory:
+              </p>
+              <div class="code-block-wrapper">
+                <div class="code-header">
+                  <span class="code-lang-tag">Linux / macOS (Bash)</span>
+                  <button class="copy-btn">Copy</button>
+                </div>
+                <pre class="code-content"><code># 1. Configure the build directory targeting the examples CMakeLists.txt
+cmake -B build -S examples
+
+# 2. Build all example executables concurrently
+cmake --build build -j
+
+# 3. Executables are located in build/
+./build/01_hello_world
+./build/02_rest_api
+./build/03_auth_sessions
+./build/04_template_rendering
+./build/05_file_upload</code></pre>
+              </div>
+
+              <div class="code-block-wrapper">
+                <div class="code-header">
+                  <span class="code-lang-tag">Windows (PowerShell / MinGW / MSVC)</span>
+                  <button class="copy-btn">Copy</button>
+                </div>
+                <pre class="code-content"><code># 1. Configure build directory
+cmake -B build -S examples
+
+# 2. Compile all targets in Release mode
+cmake --build build --config Release
+
+# 3. Run any example
+.\build\Release\01_hello_world.exe</code></pre>
+              </div>
+
+              <h2>Building Individual Examples (Method 2: Direct Compiler Invocations)</h2>
+              <p>
+                Because Peregrine is 100% header-only, you do not need CMake to test an example. You can compile any example
+                with a single terminal command from the project root:
+              </p>
+              <div class="code-block-wrapper">
+                <div class="code-header">
+                  <span class="code-lang-tag">GCC / Clang (Linux &amp; macOS)</span>
+                  <button class="copy-btn">Copy</button>
+                </div>
+                <pre class="code-content"><code># 01. Hello World
+g++ -std=c++11 -I include examples/01_hello_world/main.cpp -lssl -lcrypto -lpthread -o hello_world
+
+# 02. RESTful Task API
+g++ -std=c++11 -I include examples/02_rest_api/main.cpp -lssl -lcrypto -lpthread -o rest_api
+
+# 03. Authentication &amp; Sessions
+g++ -std=c++11 -I include examples/03_auth_sessions/main.cpp -lssl -lcrypto -lpthread -o auth_sessions
+
+# 04. Template Rendering
+g++ -std=c++11 -I include examples/04_template_rendering/main.cpp -lssl -lcrypto -lpthread -o templates_demo
+
+# 05. Multipart File Upload
+g++ -std=c++11 -I include examples/05_file_upload/main.cpp -lssl -lcrypto -lpthread -o file_upload</code></pre>
+              </div>
+
+              <div class="code-block-wrapper">
+                <div class="code-header">
+                  <span class="code-lang-tag">Windows MinGW (PowerShell)</span>
+                  <button class="copy-btn">Copy</button>
+                </div>
+                <pre class="code-content"><code># 01. Hello World
+g++ -std=c++11 -I include examples/01_hello_world/main.cpp -lssl -lcrypto -lpthread -lws2_32 -o hello_world.exe
+
+# 02. RESTful Task API
+g++ -std=c++11 -I include examples/02_rest_api/main.cpp -lssl -lcrypto -lpthread -lws2_32 -o rest_api.exe
+
+# 03. Authentication &amp; Sessions
+g++ -std=c++11 -I include examples/03_auth_sessions/main.cpp -lssl -lcrypto -lpthread -lws2_32 -o auth_sessions.exe
+
+# 04. Template Rendering
+g++ -std=c++11 -I include examples/04_template_rendering/main.cpp -lssl -lcrypto -lpthread -lws2_32 -o templates_demo.exe
+
+# 05. Multipart File Upload
+g++ -std=c++11 -I include examples/05_file_upload/main.cpp -lssl -lcrypto -lpthread -lws2_32 -o file_upload.exe</code></pre>
+              </div>
+
+              <h2>Automated Testing of Examples with TestClient</h2>
+              <p>
+                In addition to running examples over the network with <code>curl</code> or a browser, you can write unit tests
+                for these exact patterns using Peregrine&#039;s built-in <code>TestClient</code>. This executes the entire HTTP
+                parsing, routing, and middleware pipeline in-memory in sub-millisecond times without port binding:
+              </p>
+              <div class="code-block-wrapper">
+                <div class="code-header">
+                  <span class="code-lang-tag">C++11 Test Pattern</span>
+                  <button class="copy-btn">Copy</button>
+                </div>
+                <pre class="code-content"><code><span class="hl-preprocessor">#include</span> <span class="hl-string">&lt;peregrine/peregrine.hpp&gt;</span>
+<span class="hl-preprocessor">#include</span> <span class="hl-string">&quot;tests/test_client.hpp&quot;</span>
+<span class="hl-preprocessor">#include</span> <span class="hl-string">&lt;cassert&gt;</span>
+
+<span class="hl-type">int</span> <span class="hl-function">main</span>() {
+    <span class="hl-type">peregrine::App</span> app;
+    app.get(<span class="hl-string">&quot;/ping&quot;</span>, [](<span class="hl-type">peregrine::Request&amp;</span>) {
+        <span class="hl-keyword">return</span> <span class="hl-type">peregrine::Response::text</span>(<span class="hl-string">&quot;pong&quot;</span>);
+    });
+
+    <span class="hl-comment">// Execute in-memory without network sockets</span>
+    <span class="hl-type">peregrine::TestClient</span> client(app);
+    <span class="hl-type">auto</span> res = client.get(<span class="hl-string">&quot;/ping&quot;</span>);
+
+    assert(res.status_code == <span class="hl-number">200</span>);
+    assert(res.body == <span class="hl-string">&quot;pong&quot;</span>);
+    <span class="hl-keyword">return</span> <span class="hl-number">0</span>;
+}</code></pre>
+              </div>
+
+            </div>
+
+            <div class="article-nav-grid">
+              <a href="#guide-spa" class="article-nav-card prev">
+                <span class="article-nav-label">← Previous</span>
+                <span class="article-nav-title">Feature Recipe: SPA Frontend Hosting</span>
+              </a>
+              <a href="#example-hello" class="article-nav-card next">
+                <span class="article-nav-label">Next →</span>
+                <span class="article-nav-title">01. Hello World Server</span>
+              </a>
+            </div>
+          </div>
+
+
+
+          <!-- ================================================================
+               ARTICLE: EXAMPLE 01 - HELLO WORLD
+               ================================================================ -->
+          <div class="doc-article-content" data-doc-id="example-hello" data-category="Project Examples"
+            data-title="01. Minimal Hello World Server">
+            <header class="article-header">
+              <span class="article-badge">Example 01 • Beginner</span>
+              <h1 class="article-title">01. Minimal Hello World Server</h1>
+              <p class="article-lead">
+                The canonical entry point to Peregrine: initialize the application coordinator, bind text and HTML route handlers,
+                extract dynamic path parameters with type-safe regex patterns, and start the multi-threaded socket listener.
+              </p>
+              <div class="article-meta">
+                <span>Directory: <code>examples/01_hello_world/</code></span>
+                <span>•</span>
+                <span>Port: <code>8080</code></span>
+                <span>•</span>
+                <span>File: <code>main.cpp</code> (55 lines)</span>
+              </div>
+            </header>
+
+            <div class="rich-text">
+              <h2>Key Architectural Concepts</h2>
+              <p>
+                This example demonstrates the core building blocks required for every Peregrine application:
+              </p>
+              <ul>
+                <li><strong><code>peregrine::App app(&quot;hello_world_app&quot;)</code></strong>: The master coordinator instance managing the thread pool, route trie, and socket server.</li>
+                <li><strong>Plain-Text Route (<code>/</code>)</strong>: Uses <code>Response::text()</code> which automatically sets <code>Content-Type: text/plain; charset=utf-8</code> and computes <code>Content-Length</code>.</li>
+                <li><strong>HTML Route (<code>/html</code>)</strong>: Uses <code>Response::html()</code> to deliver rich HTML payloads with <code>Content-Type: text/html; charset=utf-8</code>.</li>
+                <li><strong>Dynamic Parameter Route (<code>/greet/&lt;string:name&gt;</code>)</strong>: Compiles a dynamic URL pattern. When a request arrives, Peregrine extracts the segment and populates <code>req.path_params[&quot;name&quot;]</code>.</li>
+                <li><strong><code>app.run(host, port)</code></strong>: Binds to the TCP socket and begins accepting requests across worker threads.</li>
+              </ul>
+
+              <h2>Directory Structure</h2>
+              <div class="code-block-wrapper">
+                <div class="code-header">
+                  <span class="code-lang-tag">Folder Layout</span>
+                  <button class="copy-btn">Copy</button>
+                </div>
+                <pre class="code-content"><code>examples/01_hello_world/
+├── CMakeLists.txt    # Optional CMake target
+├── README.md         # Tutorial &amp; curl walkthrough
+└── main.cpp          # Complete source code (55 lines)</code></pre>
+              </div>
+
+              <h2>Complete Source Code (<code>main.cpp</code>)</h2>
+              <div class="code-block-wrapper">
+                <div class="code-header">
+                  <span class="code-lang-tag">C++11 — examples/01_hello_world/main.cpp</span>
+                  <button class="copy-btn">Copy</button>
+                </div>
+                <pre class="code-content"><code><span class="hl-comment">// SPDX-License-Identifier: Apache-2.0</span>
+<span class="hl-comment">// Copyright (c) 2026 Harshad Kanani. All rights reserved.</span>
+
+<span class="hl-preprocessor">#include</span> <span class="hl-string">&quot;peregrine/peregrine.hpp&quot;</span>
+<span class="hl-preprocessor">#include</span> <span class="hl-string">&lt;iostream&gt;</span>
+
+<span class="hl-keyword">using</span> <span class="hl-keyword">namespace</span> peregrine;
+
+<span class="hl-keyword">int</span> <span class="hl-function">main</span>() {
+<span class="hl-comment">    // 1. Initialize the Peregrine application</span>
+    <span class="hl-type">App</span> app(<span class="hl-string">&quot;hello_world_app&quot;</span>);
+
+<span class="hl-comment">    // 2. Define a simple plain-text route</span>
+    app.<span class="hl-function">get</span>(<span class="hl-string">&quot;/&quot;</span>, [](<span class="hl-type">Request</span>&amp;) {
+        <span class="hl-keyword">return</span> Response::text(<span class="hl-string">&quot;Hello, World! Welcome to Peregrine C++ Web Framework.&quot;</span>);
+    });
+
+<span class="hl-comment">    // 3. Define an HTML route</span>
+    app.<span class="hl-function">get</span>(<span class="hl-string">&quot;/html&quot;</span>, [](<span class="hl-type">Request</span>&amp;) {
+        <span class="hl-keyword">return</span> Response::html(
+            <span class="hl-string">&quot;&lt;!DOCTYPE html&gt;&quot;</span>
+            <span class="hl-string">&quot;&lt;html&gt;&quot;</span>
+            <span class="hl-string">&quot;&lt;head&gt;&lt;title&gt;Peregrine Hello World&lt;/title&gt;&lt;/head&gt;&quot;</span>
+            <span class="hl-string">&quot;&lt;body style=&#039;font-family: sans-serif; text-align: center; padding-top: 50px;&#039;&gt;&quot;</span>
+            <span class="hl-string">&quot;  &lt;h1&gt;🦅 Hello from Peregrine!&lt;/h1&gt;&quot;</span>
+            <span class="hl-string">&quot;  &lt;p&gt;A fast, modern, header-only C++11 web framework.&lt;/p&gt;&quot;</span>
+            <span class="hl-string">&quot;  &lt;p&gt;&lt;a href=&#039;/greet/Developer&#039;&gt;Click here to test dynamic routing&lt;/a&gt;&lt;/p&gt;&quot;</span>
+            <span class="hl-string">&quot;&lt;/body&gt;&quot;</span>
+            <span class="hl-string">&quot;&lt;/html&gt;&quot;</span>
+        );
+    });
+
+<span class="hl-comment">    // 4. Define a dynamic route with a path parameter</span>
+    app.<span class="hl-function">get</span>(<span class="hl-string">&quot;/greet/&lt;string:name&gt;&quot;</span>, [](<span class="hl-type">Request</span>&amp; req) {
+        <span class="hl-type">std::string</span> name = req.path_params[<span class="hl-string">&quot;name&quot;</span>];
+        <span class="hl-keyword">return</span> Response::text(<span class="hl-string">&quot;Hello, &quot;</span> + name + <span class="hl-string">&quot;! Welcome to your Peregrine application.&quot;</span>);
+    });
+
+<span class="hl-comment">    // 5. Start the multi-threaded HTTP server</span>
+    <span class="hl-keyword">const</span> <span class="hl-type">std::string</span> host = <span class="hl-string">&quot;127.0.0.1&quot;</span>;
+    <span class="hl-keyword">const</span> <span class="hl-keyword">int</span> port = <span class="hl-number">8080</span>;
+
+    <span class="hl-type">std::cout</span> &lt;&lt; <span class="hl-string">&quot;==================================================&quot;</span> &lt;&lt; <span class="hl-type">std::endl</span>;
+    <span class="hl-type">std::cout</span> &lt;&lt; <span class="hl-string">&quot;  Peregrine Hello World Server Running&quot;</span> &lt;&lt; <span class="hl-type">std::endl</span>;
+    <span class="hl-type">std::cout</span> &lt;&lt; <span class="hl-string">&quot;  Listening on: http://&quot;</span> &lt;&lt; host &lt;&lt; <span class="hl-string">&quot;:&quot;</span> &lt;&lt; port &lt;&lt; <span class="hl-type">std::endl</span>;
+    <span class="hl-type">std::cout</span> &lt;&lt; <span class="hl-string">&quot;==================================================&quot;</span> &lt;&lt; <span class="hl-type">std::endl</span>;
+    <span class="hl-type">std::cout</span> &lt;&lt; <span class="hl-string">&quot;Available endpoints:&quot;</span> &lt;&lt; <span class="hl-type">std::endl</span>;
+    <span class="hl-type">std::cout</span> &lt;&lt; <span class="hl-string">&quot;  - GET http://&quot;</span> &lt;&lt; host &lt;&lt; <span class="hl-string">&quot;:&quot;</span> &lt;&lt; port &lt;&lt; <span class="hl-string">&quot;/&quot;</span> &lt;&lt; <span class="hl-type">std::endl</span>;
+    <span class="hl-type">std::cout</span> &lt;&lt; <span class="hl-string">&quot;  - GET http://&quot;</span> &lt;&lt; host &lt;&lt; <span class="hl-string">&quot;:&quot;</span> &lt;&lt; port &lt;&lt; <span class="hl-string">&quot;/html&quot;</span> &lt;&lt; <span class="hl-type">std::endl</span>;
+    <span class="hl-type">std::cout</span> &lt;&lt; <span class="hl-string">&quot;  - GET http://&quot;</span> &lt;&lt; host &lt;&lt; <span class="hl-string">&quot;:&quot;</span> &lt;&lt; port &lt;&lt; <span class="hl-string">&quot;/greet/&lt;your-name&gt;&quot;</span> &lt;&lt; <span class="hl-type">std::endl</span>;
+
+    app.<span class="hl-function">run</span>(host, port);
+    <span class="hl-keyword">return</span> <span class="hl-number">0</span>;
+}
+</code></pre>
+              </div>
+
+              <h2>Compilation Instructions</h2>
+              <div class="code-block-wrapper">
+                <div class="code-header">
+                  <span class="code-lang-tag">Terminal Build Commands</span>
+                  <button class="copy-btn">Copy</button>
+                </div>
+                <pre class="code-content"><code># Linux &amp; macOS (GCC / Clang)
+g++ -std=c++11 -I include examples/01_hello_world/main.cpp -lssl -lcrypto -lpthread -o hello_world
+
+# Windows (MinGW PowerShell)
+g++ -std=c++11 -I include examples/01_hello_world/main.cpp -lssl -lcrypto -lpthread -lws2_32 -o hello_world.exe
+
+# Run the executable
+./hello_world</code></pre>
+              </div>
+
+              <h2>Live Verification &amp; curl Testing</h2>
+              <p>
+                Once running on <code>127.0.0.1:8080</code>, open another terminal window and test each route using <code>curl</code>:
+              </p>
+
+              <h3>1. Test Plain-Text Root Route</h3>
+              <div class="code-block-wrapper">
+                <div class="code-header"><span class="code-lang-tag">Bash / curl</span><button class="copy-btn">Copy</button></div>
+                <pre class="code-content"><code>curl -i http://127.0.0.1:8080/</code></pre>
+              </div>
+              <div class="output-block-wrapper">
+                <div class="output-header">
+                  <div class="output-header-left"><div class="output-dots"><span class="output-dot red"></span><span class="output-dot yellow"></span><span class="output-dot green"></span></div><span class="output-tag">HTTP Wire Response</span></div>
+                  <span>SAMPLE OUTPUT</span>
+                </div>
+                <pre class="output-content wire">HTTP/1.1 200 OK
+Content-Type: text/plain; charset=utf-8
+Content-Length: 53
+Connection: close
+
+Hello, World! Welcome to Peregrine C++ Web Framework.</pre>
+              </div>
+
+              <h3>2. Test HTML Document Route</h3>
+              <div class="code-block-wrapper">
+                <div class="code-header"><span class="code-lang-tag">Bash / curl</span><button class="copy-btn">Copy</button></div>
+                <pre class="code-content"><code>curl -i http://127.0.0.1:8080/html</code></pre>
+              </div>
+              <div class="output-block-wrapper">
+                <div class="output-header">
+                  <div class="output-header-left"><div class="output-dots"><span class="output-dot red"></span><span class="output-dot yellow"></span><span class="output-dot green"></span></div><span class="output-tag">HTTP Wire Response</span></div>
+                  <span>SAMPLE OUTPUT</span>
+                </div>
+                <pre class="output-content wire">HTTP/1.1 200 OK
+Content-Type: text/html; charset=utf-8
+Content-Length: 265
+Connection: close
+
+&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;title&gt;Peregrine Hello World&lt;/title&gt;&lt;/head&gt;&lt;body style=&#039;font-family: sans-serif; text-align: center; padding-top: 50px;&#039;&gt;  &lt;h1&gt;🦅 Hello from Peregrine!&lt;/h1&gt;  &lt;p&gt;A fast, modern, header-only C++11 web framework.&lt;/p&gt;  &lt;p&gt;&lt;a href=&#039;/greet/Developer&#039;&gt;Click here to test dynamic routing&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</pre>
+              </div>
+
+              <h3>3. Test Dynamic Path Parameter</h3>
+              <div class="code-block-wrapper">
+                <div class="code-header"><span class="code-lang-tag">Bash / curl</span><button class="copy-btn">Copy</button></div>
+                <pre class="code-content"><code>curl -i http://127.0.0.1:8080/greet/Harshad</code></pre>
+              </div>
+              <div class="output-block-wrapper">
+                <div class="output-header">
+                  <div class="output-header-left"><div class="output-dots"><span class="output-dot red"></span><span class="output-dot yellow"></span><span class="output-dot green"></span></div><span class="output-tag">HTTP Wire Response</span></div>
+                  <span>SAMPLE OUTPUT</span>
+                </div>
+                <pre class="output-content wire">HTTP/1.1 200 OK
+Content-Type: text/plain; charset=utf-8
+Content-Length: 51
+Connection: close
+
+Hello, Harshad! Welcome to your Peregrine application.</pre>
+              </div>
+
+              <h3>4. Test Non-Existent Route (Default 404)</h3>
+              <div class="code-block-wrapper">
+                <div class="code-header"><span class="code-lang-tag">Bash / curl</span><button class="copy-btn">Copy</button></div>
+                <pre class="code-content"><code>curl -i http://127.0.0.1:8080/non_existent_page</code></pre>
+              </div>
+              <div class="output-block-wrapper">
+                <div class="output-header">
+                  <div class="output-header-left"><div class="output-dots"><span class="output-dot red"></span><span class="output-dot yellow"></span><span class="output-dot green"></span></div><span class="output-tag">HTTP Wire Response</span></div>
+                  <span>SAMPLE OUTPUT</span>
+                </div>
+                <pre class="output-content wire">HTTP/1.1 404 Not Found
+Content-Type: text/plain; charset=utf-8
+Content-Length: 9
+Connection: close
+
+Not Found</pre>
+              </div>
+
+            </div>
+
+            <div class="article-nav-grid">
+              <a href="#examples-hub" class="article-nav-card prev">
+                <span class="article-nav-label">← Previous</span>
+                <span class="article-nav-title">Runnable Examples &amp; Build Hub</span>
+              </a>
+              <a href="#example-rest" class="article-nav-card next">
+                <span class="article-nav-label">Next →</span>
+                <span class="article-nav-title">02. RESTful Task API</span>
+              </a>
+            </div>
+          </div>
+
+
+
+          <!-- ================================================================
+               ARTICLE: EXAMPLE 02 - REST API
+               ================================================================ -->
+          <div class="doc-article-content" data-doc-id="example-rest" data-category="Project Examples"
+            data-title="02. RESTful Task API (CRUD &amp; Blueprints)">
+            <header class="article-header">
+              <span class="article-badge">Example 02 • Intermediate</span>
+              <h1 class="article-title">02. RESTful Task API (CRUD &amp; Blueprints)</h1>
+              <p class="article-lead">
+                Implement a production-quality JSON microservice with domain models, thread-safe memory storage,
+                modular Blueprint URL prefixing (<code>/api/v1</code>), scoped CORS middleware, and standard REST verbs.
+              </p>
+              <div class="article-meta">
+                <span>Directory: <code>examples/02_rest_api/</code></span>
+                <span>•</span>
+                <span>Base URL: <code>/api/v1/tasks</code></span>
+                <span>•</span>
+                <span>File: <code>main.cpp</code> (210 lines)</span>
+              </div>
+            </header>
+
+            <div class="rich-text">
+              <h2>Architecture &amp; Design Overview</h2>
+              <p>
+                In a production microservice, web handlers are executed across concurrent worker threads. This example
+                shows how to safely combine:
+              </p>
+              <ul>
+                <li><strong>Domain Struct <code>Task</code></strong>: Encapsulates entity attributes (<code>id</code>, <code>title</code>, <code>description</code>, <code>completed</code>) and serialization into a <code>peregrine::Json</code> object.</li>
+                <li><strong>Thread-Safe <code>TaskDatabase</code></strong>: Uses <code>std::mutex</code> and <code>std::lock_guard&lt;std::mutex&gt;</code> to protect state mutations against race conditions.</li>
+                <li><strong>Modular <code>Blueprint api(&quot;api&quot;, &quot;/api/v1&quot;)</code></strong>: Organizes the endpoints into a self-contained module isolated by URL prefix.</li>
+                <li><strong>Scoped Middleware (<code>api.after_request</code>)</strong>: Automatically injects <code>X-API-Version: 1.0.0</code> and <code>Access-Control-Allow-Origin: *</code> headers on every response emitted by the blueprint.</li>
+                <li><strong>Strict HTTP Conformance</strong>: Returns <code>200 OK</code>, <code>201 Created</code>, <code>400 Bad Request</code> on malformed JSON, and <code>404 Not Found</code> when records are absent.</li>
+              </ul>
+
+              <div class="flowchart-wrapper">
+                <div style="font-size: 0.8rem; font-weight: 600; color: var(--text-muted); margin-bottom: 8px;">
+                  Figure EX.2: Blueprint Routing &amp; Thread-Safe Mutex Lock Architecture
+                </div>
+                <pre class="flowchart-content"><code>  HTTP Client Request
+         |
+         v
+  [ App Router ] --&gt; Matches Prefix &quot;/api/v1&quot; --&gt; Dispatches to [ Blueprint api ]
+                                                               |
+    +----------------------------------------------------------+
+    |
+    |-- GET    /api/v1/tasks       --&gt; db.list_tasks()   [Lock Guard] --&gt; Response::json(200)
+    |-- GET    /api/v1/tasks/&lt;id&gt;  --&gt; db.get_task(id)   [Lock Guard] --&gt; Response::json(200 / 404)
+    |-- POST   /api/v1/tasks       --&gt; db.create_task()  [Lock Guard] --&gt; Response::json(201 / 400)
+    |-- PUT    /api/v1/tasks/&lt;id&gt;  --&gt; db.update_task()  [Lock Guard] --&gt; Response::json(200 / 404)
+    `-- DELETE /api/v1/tasks/&lt;id&gt;  --&gt; db.delete_task()  [Lock Guard] --&gt; Response::json(200 / 404)
+                                                               |
+                                                               v
+                                                [ api.after_request Hook ]
+                                                Sets X-API-Version &amp; CORS
+                                                               |
+                                                               v
+                                                       HTTP Wire Response</code></pre>
+              </div>
+
+              <h2>Directory Structure</h2>
+              <div class="code-block-wrapper">
+                <div class="code-header">
+                  <span class="code-lang-tag">Folder Layout</span>
+                  <button class="copy-btn">Copy</button>
+                </div>
+                <pre class="code-content"><code>examples/02_rest_api/
+├── CMakeLists.txt    # Optional CMake target
+├── README.md         # API reference &amp; curl walkthrough
+└── main.cpp          # Complete source code (210 lines)</code></pre>
+              </div>
+
+              <h2>Complete Source Code (<code>main.cpp</code>)</h2>
+              <div class="code-block-wrapper">
+                <div class="code-header">
+                  <span class="code-lang-tag">C++11 — examples/02_rest_api/main.cpp</span>
+                  <button class="copy-btn">Copy</button>
+                </div>
+                <pre class="code-content"><code><span class="hl-comment">// SPDX-License-Identifier: Apache-2.0</span>
+<span class="hl-comment">// Copyright (c) 2026 Harshad Kanani. All rights reserved.</span>
+
+<span class="hl-preprocessor">#include</span> <span class="hl-string">&quot;peregrine/peregrine.hpp&quot;</span>
+<span class="hl-preprocessor">#include</span> <span class="hl-string">&lt;iostream&gt;</span>
+<span class="hl-preprocessor">#include</span> <span class="hl-string">&lt;map&gt;</span>
+<span class="hl-preprocessor">#include</span> <span class="hl-string">&lt;mutex&gt;</span>
+<span class="hl-preprocessor">#include</span> <span class="hl-string">&lt;string&gt;</span>
+
+<span class="hl-keyword">using</span> <span class="hl-keyword">namespace</span> peregrine;
+
+<span class="hl-comment">// Task data structure</span>
+<span class="hl-keyword">struct</span> <span class="hl-type">Task</span> {
+    <span class="hl-keyword">int</span> id;
+    <span class="hl-type">std::string</span> title;
+    <span class="hl-type">std::string</span> description;
+    <span class="hl-keyword">bool</span> completed;
+
+    <span class="hl-type">Json</span> <span class="hl-function">to_json</span>() <span class="hl-keyword">const</span> {
+        <span class="hl-type">Json</span> j = Json::object();
+        j[<span class="hl-string">&quot;id&quot;</span>] = id;
+        j[<span class="hl-string">&quot;title&quot;</span>] = title;
+        j[<span class="hl-string">&quot;description&quot;</span>] = description;
+        j[<span class="hl-string">&quot;completed&quot;</span>] = completed;
+        <span class="hl-keyword">return</span> j;
+    }
+};
+
+<span class="hl-comment">// Thread-safe in-memory task database</span>
+<span class="hl-keyword">class</span> <span class="hl-type">TaskDatabase</span> {
+<span class="hl-keyword">private</span>:
+    <span class="hl-type">std::mutex</span> mtx_;
+    <span class="hl-type">std::map</span>&lt;<span class="hl-keyword">int</span>, <span class="hl-type">Task</span>&gt; tasks_;
+    <span class="hl-keyword">int</span> next_id_ = <span class="hl-number">1</span>;
+
+<span class="hl-keyword">public</span>:
+    <span class="hl-type">TaskDatabase</span>() {
+<span class="hl-comment">        // Seed with sample tasks</span>
+        <span class="hl-function">create_task</span>(<span class="hl-string">&quot;Learn Peregrine&quot;</span>, <span class="hl-string">&quot;Read the documentation and explore examples&quot;</span>, <span class="hl-keyword">true</span>);
+        <span class="hl-function">create_task</span>(<span class="hl-string">&quot;Build REST API&quot;</span>, <span class="hl-string">&quot;Implement task manager using Blueprints and JSON&quot;</span>, <span class="hl-keyword">false</span>);
+    }
+
+    <span class="hl-type">Task</span> <span class="hl-function">create_task</span>(<span class="hl-keyword">const</span> <span class="hl-type">std::string</span>&amp; title, <span class="hl-keyword">const</span> <span class="hl-type">std::string</span>&amp; description, <span class="hl-keyword">bool</span> completed = <span class="hl-keyword">false</span>) {
+        <span class="hl-type">std::lock_guard</span>&lt;<span class="hl-type">std::mutex</span>&gt; lock(mtx_);
+        <span class="hl-type">Task</span> t;
+        t.id = next_id_++;
+        t.title = title;
+        t.description = description;
+        t.completed = completed;
+        tasks_[t.id] = t;
+        <span class="hl-keyword">return</span> t;
+    }
+
+    <span class="hl-keyword">bool</span> <span class="hl-function">get_task</span>(<span class="hl-keyword">int</span> id, <span class="hl-type">Task</span>&amp; out_task) {
+        <span class="hl-type">std::lock_guard</span>&lt;<span class="hl-type">std::mutex</span>&gt; lock(mtx_);
+        <span class="hl-keyword">auto</span> it = tasks_.find(id);
+        <span class="hl-keyword">if</span> (it == tasks_.end()) <span class="hl-keyword">return</span> <span class="hl-keyword">false</span>;
+        out_task = it-&gt;second;
+        <span class="hl-keyword">return</span> <span class="hl-keyword">true</span>;
+    }
+
+    <span class="hl-type">std::vector</span>&lt;<span class="hl-type">Task</span>&gt; <span class="hl-function">list_tasks</span>() {
+        <span class="hl-type">std::lock_guard</span>&lt;<span class="hl-type">std::mutex</span>&gt; lock(mtx_);
+        <span class="hl-type">std::vector</span>&lt;<span class="hl-type">Task</span>&gt; list;
+        list.<span class="hl-function">reserve</span>(tasks_.<span class="hl-function">size</span>());
+        <span class="hl-keyword">for</span> (<span class="hl-keyword">const</span> <span class="hl-keyword">auto</span>&amp; kv : tasks_) {
+            list.<span class="hl-function">push_back</span>(kv.second);
+        }
+        <span class="hl-keyword">return</span> list;
+    }
+
+    <span class="hl-keyword">bool</span> <span class="hl-function">update_task</span>(<span class="hl-keyword">int</span> id, <span class="hl-keyword">const</span> <span class="hl-type">std::string</span>&amp; title, <span class="hl-keyword">const</span> <span class="hl-type">std::string</span>&amp; description, <span class="hl-keyword">bool</span> completed) {
+        <span class="hl-type">std::lock_guard</span>&lt;<span class="hl-type">std::mutex</span>&gt; lock(mtx_);
+        <span class="hl-keyword">auto</span> it = tasks_.find(id);
+        <span class="hl-keyword">if</span> (it == tasks_.end()) <span class="hl-keyword">return</span> <span class="hl-keyword">false</span>;
+        it-&gt;second.title = title;
+        it-&gt;second.description = description;
+        it-&gt;second.completed = completed;
+        <span class="hl-keyword">return</span> <span class="hl-keyword">true</span>;
+    }
+
+    <span class="hl-keyword">bool</span> <span class="hl-function">delete_task</span>(<span class="hl-keyword">int</span> id) {
+        <span class="hl-type">std::lock_guard</span>&lt;<span class="hl-type">std::mutex</span>&gt; lock(mtx_);
+        <span class="hl-keyword">return</span> tasks_.<span class="hl-function">erase</span>(id) &gt; <span class="hl-number">0</span>;
+    }
+};
+
+<span class="hl-keyword">int</span> <span class="hl-function">main</span>() {
+    <span class="hl-type">App</span> app(<span class="hl-string">&quot;task_api_app&quot;</span>);
+    <span class="hl-type">TaskDatabase</span> db;
+
+<span class="hl-comment">    // 1. Create a modular Blueprint with URL prefix &quot;/api/v1&quot;</span>
+    <span class="hl-type">Blueprint</span> api(<span class="hl-string">&quot;api&quot;</span>, <span class="hl-string">&quot;/api/v1&quot;</span>);
+
+<span class="hl-comment">    // 2. Blueprint-scoped middleware: set API response headers</span>
+    api.<span class="hl-function">after_request</span>([](<span class="hl-type">Request</span>&amp;, <span class="hl-type">Response</span>&amp; res) {
+        res.<span class="hl-function">set_header</span>(<span class="hl-string">&quot;X-API-Version&quot;</span>, <span class="hl-string">&quot;1.0.0&quot;</span>);
+        res.<span class="hl-function">set_header</span>(<span class="hl-string">&quot;Access-Control-Allow-Origin&quot;</span>, <span class="hl-string">&quot;*&quot;</span>);
+    });
+
+<span class="hl-comment">    // ------------------------------------------------------------------------</span>
+<span class="hl-comment">    // GET /api/v1/tasks - List all tasks</span>
+<span class="hl-comment">    // ------------------------------------------------------------------------</span>
+    api.<span class="hl-function">get</span>(<span class="hl-string">&quot;/tasks&quot;</span>, [&amp;db](<span class="hl-type">Request</span>&amp;) {
+        <span class="hl-type">std::vector</span>&lt;<span class="hl-type">Task</span>&gt; tasks = db.<span class="hl-function">list_tasks</span>();
+        <span class="hl-type">Json</span> arr = Json::array();
+        <span class="hl-keyword">for</span> (<span class="hl-keyword">const</span> <span class="hl-keyword">auto</span>&amp; t : tasks) {
+            arr.<span class="hl-function">push_back</span>(t.<span class="hl-function">to_json</span>());
+        }
+        <span class="hl-keyword">return</span> Response::json(arr);
+    });
+
+<span class="hl-comment">    // ------------------------------------------------------------------------</span>
+<span class="hl-comment">    // GET /api/v1/tasks/&lt;int:id&gt; - Get single task by ID</span>
+<span class="hl-comment">    // ------------------------------------------------------------------------</span>
+    api.<span class="hl-function">get</span>(<span class="hl-string">&quot;/tasks/&lt;int:id&gt;&quot;</span>, [&amp;db](<span class="hl-type">Request</span>&amp; req) {
+        <span class="hl-keyword">int</span> id = std::stoi(req.path_params[<span class="hl-string">&quot;id&quot;</span>]);
+        <span class="hl-type">Task</span> t;
+        <span class="hl-keyword">if</span> (!db.<span class="hl-function">get_task</span>(id, t)) {
+            <span class="hl-type">Json</span> err = Json::object();
+            err[<span class="hl-string">&quot;error&quot;</span>] = <span class="hl-string">&quot;Task not found&quot;</span>;
+            err[<span class="hl-string">&quot;id&quot;</span>] = id;
+            <span class="hl-keyword">return</span> Response::json(err, <span class="hl-number">404</span>);
+        }
+        <span class="hl-keyword">return</span> Response::json(t.<span class="hl-function">to_json</span>());
+    });
+
+<span class="hl-comment">    // ------------------------------------------------------------------------</span>
+<span class="hl-comment">    // POST /api/v1/tasks - Create a new task</span>
+<span class="hl-comment">    // ------------------------------------------------------------------------</span>
+    api.<span class="hl-function">post</span>(<span class="hl-string">&quot;/tasks&quot;</span>, [&amp;db](<span class="hl-type">Request</span>&amp; req) {
+        <span class="hl-type">Json</span> payload = req.get_json();
+        <span class="hl-keyword">if</span> (payload.is_null() || !payload.<span class="hl-function">has</span>(<span class="hl-string">&quot;title&quot;</span>)) {
+            <span class="hl-type">Json</span> err = Json::object();
+            err[<span class="hl-string">&quot;error&quot;</span>] = <span class="hl-string">&quot;Invalid JSON: &#039;title&#039; field is required&quot;</span>;
+            <span class="hl-keyword">return</span> Response::json(err, <span class="hl-number">400</span>);
+        }
+
+        <span class="hl-type">std::string</span> title = payload[<span class="hl-string">&quot;title&quot;</span>].<span class="hl-function">as_string</span>();
+        <span class="hl-type">std::string</span> desc = payload.<span class="hl-function">has</span>(<span class="hl-string">&quot;description&quot;</span>) ? payload[<span class="hl-string">&quot;description&quot;</span>].<span class="hl-function">as_string</span>() : <span class="hl-string">&quot;&quot;</span>;
+        <span class="hl-keyword">bool</span> completed = payload.<span class="hl-function">has</span>(<span class="hl-string">&quot;completed&quot;</span>) ? payload[<span class="hl-string">&quot;completed&quot;</span>].<span class="hl-function">as_bool</span>() : <span class="hl-keyword">false</span>;
+
+        <span class="hl-type">Task</span> created = db.<span class="hl-function">create_task</span>(title, desc, completed);
+        <span class="hl-keyword">return</span> Response::json(created.<span class="hl-function">to_json</span>(), <span class="hl-number">201</span>);
+    });
+
+<span class="hl-comment">    // ------------------------------------------------------------------------</span>
+<span class="hl-comment">    // PUT /api/v1/tasks/&lt;int:id&gt; - Update existing task</span>
+<span class="hl-comment">    // ------------------------------------------------------------------------</span>
+    api.<span class="hl-function">put</span>(<span class="hl-string">&quot;/tasks/&lt;int:id&gt;&quot;</span>, [&amp;db](<span class="hl-type">Request</span>&amp; req) {
+        <span class="hl-keyword">int</span> id = std::stoi(req.path_params[<span class="hl-string">&quot;id&quot;</span>]);
+        <span class="hl-type">Json</span> payload = req.get_json();
+
+        <span class="hl-type">Task</span> existing;
+        <span class="hl-keyword">if</span> (!db.<span class="hl-function">get_task</span>(id, existing)) {
+            <span class="hl-type">Json</span> err = Json::object();
+            err[<span class="hl-string">&quot;error&quot;</span>] = <span class="hl-string">&quot;Task not found&quot;</span>;
+            <span class="hl-keyword">return</span> Response::json(err, <span class="hl-number">404</span>);
+        }
+
+        <span class="hl-type">std::string</span> title = payload.<span class="hl-function">has</span>(<span class="hl-string">&quot;title&quot;</span>) ? payload[<span class="hl-string">&quot;title&quot;</span>].<span class="hl-function">as_string</span>() : existing.title;
+        <span class="hl-type">std::string</span> desc = payload.<span class="hl-function">has</span>(<span class="hl-string">&quot;description&quot;</span>) ? payload[<span class="hl-string">&quot;description&quot;</span>].<span class="hl-function">as_string</span>() : existing.description;
+        <span class="hl-keyword">bool</span> completed = payload.<span class="hl-function">has</span>(<span class="hl-string">&quot;completed&quot;</span>) ? payload[<span class="hl-string">&quot;completed&quot;</span>].<span class="hl-function">as_bool</span>() : existing.completed;
+
+        db.<span class="hl-function">update_task</span>(id, title, desc, completed);
+
+        <span class="hl-type">Task</span> updated;
+        db.<span class="hl-function">get_task</span>(id, updated);
+        <span class="hl-keyword">return</span> Response::json(updated.<span class="hl-function">to_json</span>(), <span class="hl-number">200</span>);
+    });
+
+<span class="hl-comment">    // ------------------------------------------------------------------------</span>
+<span class="hl-comment">    // DELETE /api/v1/tasks/&lt;int:id&gt; - Delete task</span>
+<span class="hl-comment">    // ------------------------------------------------------------------------</span>
+    api.<span class="hl-function">del</span>(<span class="hl-string">&quot;/tasks/&lt;int:id&gt;&quot;</span>, [&amp;db](<span class="hl-type">Request</span>&amp; req) {
+        <span class="hl-keyword">int</span> id = std::stoi(req.path_params[<span class="hl-string">&quot;id&quot;</span>]);
+        <span class="hl-keyword">if</span> (!db.<span class="hl-function">delete_task</span>(id)) {
+            <span class="hl-type">Json</span> err = Json::object();
+            err[<span class="hl-string">&quot;error&quot;</span>] = <span class="hl-string">&quot;Task not found&quot;</span>;
+            <span class="hl-keyword">return</span> Response::json(err, <span class="hl-number">404</span>);
+        }
+
+        <span class="hl-type">Json</span> res = Json::object();
+        res[<span class="hl-string">&quot;message&quot;</span>] = <span class="hl-string">&quot;Task deleted successfully&quot;</span>;
+        res[<span class="hl-string">&quot;id&quot;</span>] = id;
+        <span class="hl-keyword">return</span> Response::json(res, <span class="hl-number">200</span>);
+    });
+
+<span class="hl-comment">    // 3. Register Blueprint into Application</span>
+    app.<span class="hl-function">register_blueprint</span>(api);
+
+<span class="hl-comment">    // 4. Start Server</span>
+    <span class="hl-keyword">const</span> <span class="hl-type">std::string</span> host = <span class="hl-string">&quot;127.0.0.1&quot;</span>;
+    <span class="hl-keyword">const</span> <span class="hl-keyword">int</span> port = <span class="hl-number">8080</span>;
+
+    <span class="hl-type">std::cout</span> &lt;&lt; <span class="hl-string">&quot;==================================================&quot;</span> &lt;&lt; <span class="hl-type">std::endl</span>;
+    <span class="hl-type">std::cout</span> &lt;&lt; <span class="hl-string">&quot;  Peregrine RESTful Task API Running&quot;</span> &lt;&lt; <span class="hl-type">std::endl</span>;
+    <span class="hl-type">std::cout</span> &lt;&lt; <span class="hl-string">&quot;  Base URL: http://&quot;</span> &lt;&lt; host &lt;&lt; <span class="hl-string">&quot;:&quot;</span> &lt;&lt; port &lt;&lt; <span class="hl-string">&quot;/api/v1&quot;</span> &lt;&lt; <span class="hl-type">std::endl</span>;
+    <span class="hl-type">std::cout</span> &lt;&lt; <span class="hl-string">&quot;==================================================&quot;</span> &lt;&lt; <span class="hl-type">std::endl</span>;
+    <span class="hl-type">std::cout</span> &lt;&lt; <span class="hl-string">&quot;Endpoints:&quot;</span> &lt;&lt; <span class="hl-type">std::endl</span>;
+    <span class="hl-type">std::cout</span> &lt;&lt; <span class="hl-string">&quot;  - GET    /api/v1/tasks&quot;</span> &lt;&lt; <span class="hl-type">std::endl</span>;
+    <span class="hl-type">std::cout</span> &lt;&lt; <span class="hl-string">&quot;  - GET    /api/v1/tasks/&lt;id&gt;&quot;</span> &lt;&lt; <span class="hl-type">std::endl</span>;
+    <span class="hl-type">std::cout</span> &lt;&lt; <span class="hl-string">&quot;  - POST   /api/v1/tasks&quot;</span> &lt;&lt; <span class="hl-type">std::endl</span>;
+    <span class="hl-type">std::cout</span> &lt;&lt; <span class="hl-string">&quot;  - PUT    /api/v1/tasks/&lt;id&gt;&quot;</span> &lt;&lt; <span class="hl-type">std::endl</span>;
+    <span class="hl-type">std::cout</span> &lt;&lt; <span class="hl-string">&quot;  - DELETE /api/v1/tasks/&lt;id&gt;&quot;</span> &lt;&lt; <span class="hl-type">std::endl</span>;
+
+    app.<span class="hl-function">run</span>(host, port);
+    <span class="hl-keyword">return</span> <span class="hl-number">0</span>;
+}
+</code></pre>
+              </div>
+
+              <h2>Compilation Commands</h2>
+              <div class="code-block-wrapper">
+                <div class="code-header">
+                  <span class="code-lang-tag">Terminal Build Commands</span>
+                  <button class="copy-btn">Copy</button>
+                </div>
+                <pre class="code-content"><code># Linux &amp; macOS (GCC / Clang)
+g++ -std=c++11 -I include examples/02_rest_api/main.cpp -lssl -lcrypto -lpthread -o rest_api
+
+# Windows (MinGW PowerShell)
+g++ -std=c++11 -I include examples/02_rest_api/main.cpp -lssl -lcrypto -lpthread -lws2_32 -o rest_api.exe
+
+# Start the server
+./rest_api</code></pre>
+              </div>
+
+              <h2>Complete CRUD Verification with curl</h2>
+              <p>
+                Test every REST verb against the running server on <code>http://127.0.0.1:8080/api/v1</code>:
+              </p>
+
+              <h3>1. List All Tasks (GET /api/v1/tasks)</h3>
+              <div class="code-block-wrapper">
+                <div class="code-header"><span class="code-lang-tag">Bash / curl</span><button class="copy-btn">Copy</button></div>
+                <pre class="code-content"><code>curl -i http://127.0.0.1:8080/api/v1/tasks</code></pre>
+              </div>
+              <div class="output-block-wrapper">
+                <div class="output-header">
+                  <div class="output-header-left"><div class="output-dots"><span class="output-dot red"></span><span class="output-dot yellow"></span><span class="output-dot green"></span></div><span class="output-tag">200 OK Response</span></div>
+                  <span>SAMPLE OUTPUT</span>
+                </div>
+                <pre class="output-content wire">HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: 196
+X-API-Version: 1.0.0
+Access-Control-Allow-Origin: *
+Connection: close
+
+[
+  {"id":1,"title":"Learn Peregrine","description":"Read the documentation and explore examples","completed":true},
+  {"id":2,"title":"Build REST API","description":"Implement task manager using Blueprints and JSON","completed":false}
+]</pre>
+              </div>
+
+              <h3>2. Retrieve Single Task by ID (GET /api/v1/tasks/1)</h3>
+              <div class="code-block-wrapper">
+                <div class="code-header"><span class="code-lang-tag">Bash / curl</span><button class="copy-btn">Copy</button></div>
+                <pre class="code-content"><code>curl -i http://127.0.0.1:8080/api/v1/tasks/1</code></pre>
+              </div>
+              <div class="output-block-wrapper">
+                <div class="output-header">
+                  <div class="output-header-left"><div class="output-dots"><span class="output-dot red"></span><span class="output-dot yellow"></span><span class="output-dot green"></span></div><span class="output-tag">200 OK Response</span></div>
+                  <span>SAMPLE OUTPUT</span>
+                </div>
+                <pre class="output-content wire">HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: 95
+X-API-Version: 1.0.0
+Access-Control-Allow-Origin: *
+Connection: close
+
+{"completed":true,"description":"Read the documentation and explore examples","id":1,"title":"Learn Peregrine"}</pre>
+              </div>
+
+              <h3>3. Create a New Task (POST /api/v1/tasks)</h3>
+              <div class="code-block-wrapper">
+                <div class="code-header"><span class="code-lang-tag">Bash / curl</span><button class="copy-btn">Copy</button></div>
+                <pre class="code-content"><code>curl -i -X POST http://127.0.0.1:8080/api/v1/tasks \
+  -H "Content-Type: application/json" \
+  -d '{"title":"Deploy to AWS","description":"Setup Docker container on EC2"}'</code></pre>
+              </div>
+              <div class="output-block-wrapper">
+                <div class="output-header">
+                  <div class="output-header-left"><div class="output-dots"><span class="output-dot red"></span><span class="output-dot yellow"></span><span class="output-dot green"></span></div><span class="output-tag">201 Created Response</span></div>
+                  <span>SAMPLE OUTPUT</span>
+                </div>
+                <pre class="output-content wire">HTTP/1.1 201 Created
+Content-Type: application/json
+Content-Length: 87
+X-API-Version: 1.0.0
+Access-Control-Allow-Origin: *
+Connection: close
+
+{"completed":false,"description":"Setup Docker container on EC2","id":3,"title":"Deploy to AWS"}</pre>
+              </div>
+
+              <h3>4. Update an Existing Task (PUT /api/v1/tasks/3)</h3>
+              <div class="code-block-wrapper">
+                <div class="code-header"><span class="code-lang-tag">Bash / curl</span><button class="copy-btn">Copy</button></div>
+                <pre class="code-content"><code>curl -i -X PUT http://127.0.0.1:8080/api/v1/tasks/3 \
+  -H "Content-Type: application/json" \
+  -d '{"completed":true}'</code></pre>
+              </div>
+              <div class="output-block-wrapper">
+                <div class="output-header">
+                  <div class="output-header-left"><div class="output-dots"><span class="output-dot red"></span><span class="output-dot yellow"></span><span class="output-dot green"></span></div><span class="output-tag">200 OK Response</span></div>
+                  <span>SAMPLE OUTPUT</span>
+                </div>
+                <pre class="output-content wire">HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: 86
+X-API-Version: 1.0.0
+Access-Control-Allow-Origin: *
+Connection: close
+
+{"completed":true,"description":"Setup Docker container on EC2","id":3,"title":"Deploy to AWS"}</pre>
+              </div>
+
+              <h3>5. Delete Task (DELETE /api/v1/tasks/2)</h3>
+              <div class="code-block-wrapper">
+                <div class="code-header"><span class="code-lang-tag">Bash / curl</span><button class="copy-btn">Copy</button></div>
+                <pre class="code-content"><code>curl -i -X DELETE http://127.0.0.1:8080/api/v1/tasks/2</code></pre>
+              </div>
+              <div class="output-block-wrapper">
+                <div class="output-header">
+                  <div class="output-header-left"><div class="output-dots"><span class="output-dot red"></span><span class="output-dot yellow"></span><span class="output-dot green"></span></div><span class="output-tag">200 OK Response</span></div>
+                  <span>SAMPLE OUTPUT</span>
+                </div>
+                <pre class="output-content wire">HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: 48
+X-API-Version: 1.0.0
+Access-Control-Allow-Origin: *
+Connection: close
+
+{"id":2,"message":"Task deleted successfully"}</pre>
+              </div>
+
+              <h3>6. Validation Error on Empty Payload (POST /api/v1/tasks)</h3>
+              <div class="code-block-wrapper">
+                <div class="code-header"><span class="code-lang-tag">Bash / curl</span><button class="copy-btn">Copy</button></div>
+                <pre class="code-content"><code>curl -i -X POST http://127.0.0.1:8080/api/v1/tasks \
+  -H "Content-Type: application/json" \
+  -d '{}'</code></pre>
+              </div>
+              <div class="output-block-wrapper">
+                <div class="output-header">
+                  <div class="output-header-left"><div class="output-dots"><span class="output-dot red"></span><span class="output-dot yellow"></span><span class="output-dot green"></span></div><span class="output-tag">400 Bad Request Response</span></div>
+                  <span>SAMPLE OUTPUT</span>
+                </div>
+                <pre class="output-content wire">HTTP/1.1 400 Bad Request
+Content-Type: application/json
+Content-Length: 48
+X-API-Version: 1.0.0
+Access-Control-Allow-Origin: *
+Connection: close
+
+{"error":"Invalid JSON: 'title' field is required"}</pre>
+              </div>
+
+            </div>
+
+            <div class="article-nav-grid">
+              <a href="#example-hello" class="article-nav-card prev">
+                <span class="article-nav-label">← Previous</span>
+                <span class="article-nav-title">01. Hello World Server</span>
+              </a>
+              <a href="#example-auth" class="article-nav-card next">
+                <span class="article-nav-label">Next →</span>
+                <span class="article-nav-title">03. Auth &amp; Sessions</span>
+              </a>
+            </div>
+          </div>
+
+
+
+          <!-- ================================================================
+               ARTICLE: EXAMPLE 03 - AUTH & SESSIONS
+               ================================================================ -->
+          <div class="doc-article-content" data-doc-id="example-auth" data-category="Project Examples"
+            data-title="03. Authentication &amp; Cookie Sessions">
+            <header class="article-header">
+              <span class="article-badge">Example 03 • Intermediate</span>
+              <h1 class="article-title">03. Authentication &amp; Cookie Sessions</h1>
+              <p class="article-lead">
+                Build a secure user authentication system using client-side HMAC-SHA256 cryptographically signed session cookies,
+                protected dashboard authorization guards, and tamper-resistance verification with zero server RAM overhead.
+              </p>
+              <div class="article-meta">
+                <span>Directory: <code>examples/03_auth_sessions/</code></span>
+                <span>•</span>
+                <span>Security: HMAC-SHA256 Signed Cookies</span>
+                <span>•</span>
+                <span>File: <code>main.cpp</code> (144 lines)</span>
+              </div>
+            </header>
+
+            <div class="rich-text">
+              <h2>Stateless Cryptographic Security Architecture</h2>
+              <p>
+                In traditional web architectures, sessions are stored in server memory or a Redis cache. This introduces
+                cache downtime, synchronization latency, and horizontal scalability bottlenecks. Peregrine implements
+                <strong>stateless client-side signed cookie sessions</strong>:
+              </p>
+              <ul>
+                <li>The session state is serialized, encoded, and signed with <code>HMAC-SHA256(payload, secret_key)</code>.</li>
+                <li>The browser stores the cookie and returns it on subsequent requests.</li>
+                <li>On each request, Peregrine computes the HMAC digest of the received payload and compares it in <strong>constant-time</strong> to prevent timing attacks.</li>
+                <li>If the client attempts to tamper with the username or permissions, the signature comparison fails immediately and the session is purged.</li>
+                <li>Server memory consumption is <strong>strictly 0 bytes per active user session</strong>.</li>
+              </ul>
+
+              <div class="flowchart-wrapper">
+                <div style="font-size: 0.8rem; font-weight: 600; color: var(--text-muted); margin-bottom: 8px;">
+                  Figure EX.3: HMAC-SHA256 Stateless Cookie Session Authentication Flow
+                </div>
+                <pre class="flowchart-content"><code>  [ Browser / Client ]                                              [ Peregrine Server ]
+           |                                                                 |
+           |----- 1. POST /login (username=admin, password=secret123) -------&gt;|
+           |                                                                 | Validates credentials
+           |                                                                 | Sets req.session["user"] = "admin"
+           |                                                                 | Computes HMAC-SHA256(data, secret_key)
+           |&lt;---- 2. HTTP 302 Redirect (Set-Cookie: peregrine_session=...) ---|
+           |                                                                 |
+           |----- 3. GET /dashboard [Cookie: peregrine_session=...] ---------&gt;|
+           |                                                                 | Verifies HMAC signature
+           |                                                                 | Signature matches! &amp; Not expired
+           |&lt;---- 4. HTTP 200 OK (Render Protected Dashboard HTML) ----------|
+           |                                                                 |
+           |----- 5. TAMPER ATTACK (Alters cookie payload) ------------------&gt;|
+           |                                                                 | Verifies HMAC signature
+           |                                                                 | SIGNATURE MISMATCH! Discards cookie
+           |&lt;---- 6. HTTP 401 Unauthorized -----------------------------------|</code></pre>
+              </div>
+
+              <h2>Directory Structure</h2>
+              <div class="code-block-wrapper">
+                <div class="code-header">
+                  <span class="code-lang-tag">Folder Layout</span>
+                  <button class="copy-btn">Copy</button>
+                </div>
+                <pre class="code-content"><code>examples/03_auth_sessions/
+├── CMakeLists.txt    # Optional CMake target
+├── README.md         # Authentication walkthrough
+└── main.cpp          # Complete source code (144 lines)</code></pre>
+              </div>
+
+              <h2>Complete Source Code (<code>main.cpp</code>)</h2>
+              <div class="code-block-wrapper">
+                <div class="code-header">
+                  <span class="code-lang-tag">C++11 — examples/03_auth_sessions/main.cpp</span>
+                  <button class="copy-btn">Copy</button>
+                </div>
+                <pre class="code-content"><code><span class="hl-comment">// SPDX-License-Identifier: Apache-2.0</span>
+<span class="hl-comment">// Copyright (c) 2026 Harshad Kanani. All rights reserved.</span>
+
+<span class="hl-preprocessor">#include</span> <span class="hl-string">&quot;peregrine/peregrine.hpp&quot;</span>
+<span class="hl-preprocessor">#include</span> <span class="hl-string">&lt;iostream&gt;</span>
+<span class="hl-preprocessor">#include</span> <span class="hl-string">&lt;string&gt;</span>
+
+<span class="hl-keyword">using</span> <span class="hl-keyword">namespace</span> peregrine;
+
+<span class="hl-keyword">int</span> <span class="hl-function">main</span>() {
+    <span class="hl-type">App</span> app(<span class="hl-string">&quot;auth_session_app&quot;</span>);
+
+<span class="hl-comment">    // 1. Configure cryptographic secret key for HMAC-SHA256 session signing</span>
+    app.secret_key = <span class="hl-string">&quot;super_secret_cryptographic_key_replace_in_production&quot;</span>;
+    app.session_cookie_name = <span class="hl-string">&quot;peregrine_session&quot;</span>;
+    app.session_lifetime_seconds = <span class="hl-number">3600</span>; // <span class="hl-number">1</span> hour session validity
+
+<span class="hl-comment">    // 2. Public Home / Status Page</span>
+    app.<span class="hl-function">get</span>(<span class="hl-string">&quot;/&quot;</span>, [](<span class="hl-type">Request</span>&amp; req) {
+        <span class="hl-keyword">bool</span> is_authenticated = req.session.<span class="hl-function">has</span>(<span class="hl-string">&quot;user&quot;</span>);
+        <span class="hl-type">std::string</span> username = is_authenticated ? req.session[<span class="hl-string">&quot;user&quot;</span>] : <span class="hl-string">&quot;Guest&quot;</span>;
+
+        <span class="hl-type">std::string</span> <span class="hl-function">html</span> =
+            <span class="hl-string">&quot;&lt;!DOCTYPE html&gt;&quot;</span>
+            <span class="hl-string">&quot;&lt;html&gt;&quot;</span>
+            <span class="hl-string">&quot;&lt;head&gt;&lt;title&gt;Peregrine Authentication &amp; Sessions&lt;/title&gt;&lt;/head&gt;&quot;</span>
+            <span class="hl-string">&quot;&lt;body style=&#039;font-family: sans-serif; max-width: 600px; margin: 40px auto; line-height: 1.6;&#039;&gt;&quot;</span>
+            <span class="hl-string">&quot;  &lt;h1&gt;🦅 Peregrine Session Demo&lt;/h1&gt;&quot;</span>
+            <span class="hl-string">&quot;  &lt;p&gt;Current User: &lt;strong&gt;&quot;</span> + username + <span class="hl-string">&quot;&lt;/strong&gt;&lt;/p&gt;&quot;</span>;
+
+        <span class="hl-keyword">if</span> (is_authenticated) {
+            <span class="hl-function">html</span> +=
+                <span class="hl-string">&quot;  &lt;div style=&#039;background: #e8f5e9; padding: 15px; border-radius: 6px;&#039;&gt;&quot;</span>
+                <span class="hl-string">&quot;    &lt;p&gt;You are successfully logged in!&lt;/p&gt;&quot;</span>
+                <span class="hl-string">&quot;    &lt;p&gt;&lt;a href=&#039;/dashboard&#039;&gt;Go to Protected Dashboard&lt;/a&gt;&lt;/p&gt;&quot;</span>
+                <span class="hl-string">&quot;    &lt;form method=&#039;POST&#039; action=&#039;/logout&#039;&gt;&quot;</span>
+                <span class="hl-string">&quot;      &lt;button type=&#039;submit&#039; style=&#039;padding: 8px 16px; background: #e53935; color: white; border: none; border-radius: 4px; cursor: pointer;&#039;&gt;Log Out&lt;/button&gt;&quot;</span>
+                <span class="hl-string">&quot;    &lt;/form&gt;&quot;</span>
+                <span class="hl-string">&quot;  &lt;/div&gt;&quot;</span>;
+        } <span class="hl-keyword">else</span> {
+            <span class="hl-function">html</span> +=
+                <span class="hl-string">&quot;  &lt;div style=&#039;background: #f5f5f5; padding: 20px; border-radius: 6px;&#039;&gt;&quot;</span>
+                <span class="hl-string">&quot;    &lt;h3&gt;Login&lt;/h3&gt;&quot;</span>
+                <span class="hl-string">&quot;    &lt;form method=&#039;POST&#039; action=&#039;/login&#039;&gt;&quot;</span>
+                <span class="hl-string">&quot;      &lt;div style=&#039;margin-bottom: 12px;&#039;&gt;&quot;</span>
+                <span class="hl-string">&quot;        &lt;label&gt;Username: &lt;/label&gt;&lt;br/&gt;&quot;</span>
+                <span class="hl-string">&quot;        &lt;input type=&#039;text&#039; name=&#039;username&#039; value=&#039;admin&#039; style=&#039;width: 100%; padding: 8px; box-sizing: border-box;&#039; /&gt;&quot;</span>
+                <span class="hl-string">&quot;      &lt;/div&gt;&quot;</span>
+                <span class="hl-string">&quot;      &lt;div style=&#039;margin-bottom: 12px;&#039;&gt;&quot;</span>
+                <span class="hl-string">&quot;        &lt;label&gt;Password: &lt;/label&gt;&lt;br/&gt;&quot;</span>
+                <span class="hl-string">&quot;        &lt;input type=&#039;password&#039; name=&#039;password&#039; value=&#039;secret123&#039; style=&#039;width: 100%; padding: 8px; box-sizing: border-box;&#039; /&gt;&quot;</span>
+                <span class="hl-string">&quot;      &lt;/div&gt;&quot;</span>
+                <span class="hl-string">&quot;      &lt;button type=&#039;submit&#039; style=&#039;padding: 8px 16px; background: #1e88e5; color: white; border: none; border-radius: 4px; cursor: pointer;&#039;&gt;Sign In&lt;/button&gt;&quot;</span>
+                <span class="hl-string">&quot;    &lt;/form&gt;&quot;</span>
+                <span class="hl-string">&quot;    &lt;p style=&#039;font-size: 0.9em; color: #666;&#039;&gt;Demo credentials: username=&lt;strong&gt;admin&lt;/strong&gt;, password=&lt;strong&gt;secret123&lt;/strong&gt;&lt;/p&gt;&quot;</span>
+                <span class="hl-string">&quot;  &lt;/div&gt;&quot;</span>;
+        }
+
+        <span class="hl-function">html</span> +=
+            <span class="hl-string">&quot;  &lt;hr style=&#039;margin-top: 30px;&#039; /&gt;&quot;</span>
+            <span class="hl-string">&quot;  &lt;p&gt;&lt;a href=&#039;/session-debug&#039;&gt;View Raw Session JSON&lt;/a&gt;&lt;/p&gt;&quot;</span>
+            <span class="hl-string">&quot;&lt;/body&gt;&quot;</span>
+            <span class="hl-string">&quot;&lt;/html&gt;&quot;</span>;
+
+        <span class="hl-keyword">return</span> Response::html(<span class="hl-function">html</span>);
+    });
+
+<span class="hl-comment">    // 3. Login Endpoint (POST)</span>
+    app.<span class="hl-function">post</span>(<span class="hl-string">&quot;/login&quot;</span>, [](<span class="hl-type">Request</span>&amp; req) {
+        <span class="hl-type">std::string</span> username = req.<span class="hl-function">form_get</span>(<span class="hl-string">&quot;username&quot;</span>);
+        <span class="hl-type">std::string</span> password = req.<span class="hl-function">form_get</span>(<span class="hl-string">&quot;password&quot;</span>);
+
+<span class="hl-comment">        // Validate credentials (in production, verify against a password hash)</span>
+        <span class="hl-keyword">if</span> (username == <span class="hl-string">&quot;admin&quot;</span> &amp;&amp; password == <span class="hl-string">&quot;secret123&quot;</span>) {
+            req.session[<span class="hl-string">&quot;user&quot;</span>] = username;
+            req.session[<span class="hl-string">&quot;role&quot;</span>] = <span class="hl-string">&quot;administrator&quot;</span>;
+            req.session.permanent = <span class="hl-keyword">true</span>; // Sets cookie Max-Age
+
+            <span class="hl-keyword">return</span> Response::redirect(<span class="hl-string">&quot;/&quot;</span>);
+        }
+
+        <span class="hl-keyword">return</span> Response::html(<span class="hl-string">&quot;&lt;h3&gt;Invalid credentials. &lt;a href=&#039;/&#039;&gt;Try again&lt;/a&gt;&lt;/h3&gt;&quot;</span>, <span class="hl-number">401</span>);
+    });
+
+<span class="hl-comment">    // 4. Protected Dashboard (Requires Authenticated Session)</span>
+    app.<span class="hl-function">get</span>(<span class="hl-string">&quot;/dashboard&quot;</span>, [](<span class="hl-type">Request</span>&amp; req) {
+        <span class="hl-keyword">if</span> (!req.session.<span class="hl-function">has</span>(<span class="hl-string">&quot;user&quot;</span>)) {
+            <span class="hl-keyword">return</span> Response::text(<span class="hl-string">&quot;Unauthorized: You must log in to view this page.&quot;</span>, <span class="hl-number">401</span>);
+        }
+
+        <span class="hl-type">std::string</span> user = req.session[<span class="hl-string">&quot;user&quot;</span>];
+        <span class="hl-type">std::string</span> role = req.session[<span class="hl-string">&quot;role&quot;</span>];
+
+        <span class="hl-type">std::string</span> <span class="hl-function">html</span> =
+            <span class="hl-string">&quot;&lt;!DOCTYPE html&gt;&quot;</span>
+            <span class="hl-string">&quot;&lt;html&gt;&quot;</span>
+            <span class="hl-string">&quot;&lt;head&gt;&lt;title&gt;Dashboard&lt;/title&gt;&lt;/head&gt;&quot;</span>
+            <span class="hl-string">&quot;&lt;body style=&#039;font-family: sans-serif; max-width: 600px; margin: 40px auto;&#039;&gt;&quot;</span>
+            <span class="hl-string">&quot;  &lt;h1&gt;Dashboard&lt;/h1&gt;&quot;</span>
+            <span class="hl-string">&quot;  &lt;p&gt;Welcome to the protected dashboard, &lt;strong&gt;&quot;</span> + user + <span class="hl-string">&quot;&lt;/strong&gt; (&quot;</span> + role + <span class="hl-string">&quot;)!&lt;/p&gt;&quot;</span>
+            <span class="hl-string">&quot;  &lt;p&gt;This page verified your HMAC-SHA256 cryptographically signed session cookie.&lt;/p&gt;&quot;</span>
+            <span class="hl-string">&quot;  &lt;p&gt;&lt;a href=&#039;/&#039;&gt;Back to Home&lt;/a&gt;&lt;/p&gt;&quot;</span>
+            <span class="hl-string">&quot;&lt;/body&gt;&quot;</span>
+            <span class="hl-string">&quot;&lt;/html&gt;&quot;</span>;
+
+        <span class="hl-keyword">return</span> Response::html(<span class="hl-function">html</span>);
+    });
+
+<span class="hl-comment">    // 5. Logout Endpoint (Clears Session)</span>
+    app.<span class="hl-function">post</span>(<span class="hl-string">&quot;/logout&quot;</span>, [](<span class="hl-type">Request</span>&amp; req) {
+        req.session.<span class="hl-function">clear</span>();
+        <span class="hl-keyword">return</span> Response::redirect(<span class="hl-string">&quot;/&quot;</span>);
+    });
+
+<span class="hl-comment">    // 6. Session Debug Endpoint (Returns JSON representation of session)</span>
+    app.<span class="hl-function">get</span>(<span class="hl-string">&quot;/session-debug&quot;</span>, [](<span class="hl-type">Request</span>&amp; req) {
+        <span class="hl-type">Json</span> j = Json::object();
+        j[<span class="hl-string">&quot;authenticated&quot;</span>] = req.session.<span class="hl-function">has</span>(<span class="hl-string">&quot;user&quot;</span>);
+        j[<span class="hl-string">&quot;modified&quot;</span>] = req.session.modified;
+        j[<span class="hl-string">&quot;permanent&quot;</span>] = req.session.permanent;
+
+        <span class="hl-type">Json</span> data = Json::object();
+        <span class="hl-keyword">for</span> (<span class="hl-keyword">const</span> <span class="hl-keyword">auto</span>&amp; kv : req.session.data) {
+            data[kv.first] = kv.second;
+        }
+        j[<span class="hl-string">&quot;data&quot;</span>] = data;
+
+        <span class="hl-keyword">return</span> Response::json(j);
+    });
+
+<span class="hl-comment">    // 7. Start the Server</span>
+    <span class="hl-keyword">const</span> <span class="hl-type">std::string</span> host = <span class="hl-string">&quot;127.0.0.1&quot;</span>;
+    <span class="hl-keyword">const</span> <span class="hl-keyword">int</span> port = <span class="hl-number">8080</span>;
+
+    <span class="hl-type">std::cout</span> &lt;&lt; <span class="hl-string">&quot;==================================================&quot;</span> &lt;&lt; <span class="hl-type">std::endl</span>;
+    <span class="hl-type">std::cout</span> &lt;&lt; <span class="hl-string">&quot;  Peregrine Session &amp; Authentication Demo&quot;</span> &lt;&lt; <span class="hl-type">std::endl</span>;
+    <span class="hl-type">std::cout</span> &lt;&lt; <span class="hl-string">&quot;  Listening on: http://&quot;</span> &lt;&lt; host &lt;&lt; <span class="hl-string">&quot;:&quot;</span> &lt;&lt; port &lt;&lt; <span class="hl-type">std::endl</span>;
+    <span class="hl-type">std::cout</span> &lt;&lt; <span class="hl-string">&quot;==================================================&quot;</span> &lt;&lt; <span class="hl-type">std::endl</span>;
+    <span class="hl-type">std::cout</span> &lt;&lt; <span class="hl-string">&quot;Open your browser to: http://&quot;</span> &lt;&lt; host &lt;&lt; <span class="hl-string">&quot;:&quot;</span> &lt;&lt; port &lt;&lt; <span class="hl-string">&quot;/&quot;</span> &lt;&lt; <span class="hl-type">std::endl</span>;
+
+    app.<span class="hl-function">run</span>(host, port);
+    <span class="hl-keyword">return</span> <span class="hl-number">0</span>;
+}
+</code></pre>
+              </div>
+
+              <h2>Compilation Commands</h2>
+              <div class="code-block-wrapper">
+                <div class="code-header">
+                  <span class="code-lang-tag">Terminal Build Commands</span>
+                  <button class="copy-btn">Copy</button>
+                </div>
+                <pre class="code-content"><code># Linux &amp; macOS (GCC / Clang)
+g++ -std=c++11 -I include examples/03_auth_sessions/main.cpp -lssl -lcrypto -lpthread -o auth_sessions
+
+# Windows (MinGW PowerShell)
+g++ -std=c++11 -I include examples/03_auth_sessions/main.cpp -lssl -lcrypto -lpthread -lws2_32 -o auth_sessions.exe
+
+# Run the server
+./auth_sessions</code></pre>
+              </div>
+
+              <h2>Live Testing Workflow with curl &amp; Cookie Jar</h2>
+              <p>
+                Using <code>curl</code> with the <code>-c</code> (write cookies) and <code>-b</code> (send cookies) flags lets you simulate a stateful browser session:
+              </p>
+
+              <h3>Step 1: Attempt Protected Route Without Login (401 Unauthorized)</h3>
+              <div class="code-block-wrapper">
+                <div class="code-header"><span class="code-lang-tag">Bash / curl</span><button class="copy-btn">Copy</button></div>
+                <pre class="code-content"><code>curl -i http://127.0.0.1:8080/dashboard</code></pre>
+              </div>
+              <div class="output-block-wrapper">
+                <div class="output-header">
+                  <div class="output-header-left"><div class="output-dots"><span class="output-dot red"></span><span class="output-dot yellow"></span><span class="output-dot green"></span></div><span class="output-tag">401 Unauthorized</span></div>
+                  <span>SAMPLE OUTPUT</span>
+                </div>
+                <pre class="output-content wire">HTTP/1.1 401 Unauthorized
+Content-Type: text/plain; charset=utf-8
+Content-Length: 48
+Connection: close
+
+Unauthorized: You must log in to view this page.</pre>
+              </div>
+
+              <h3>Step 2: Sign In and Save Signed Session Cookie</h3>
+              <div class="code-block-wrapper">
+                <div class="code-header"><span class="code-lang-tag">Bash / curl</span><button class="copy-btn">Copy</button></div>
+                <pre class="code-content"><code>curl -i -c cookies.txt -b cookies.txt \
+  -d "username=admin&amp;password=secret123" \
+  -X POST http://127.0.0.1:8080/login</code></pre>
+              </div>
+              <div class="output-block-wrapper">
+                <div class="output-header">
+                  <div class="output-header-left"><div class="output-dots"><span class="output-dot red"></span><span class="output-dot yellow"></span><span class="output-dot green"></span></div><span class="output-tag">302 Found with Set-Cookie</span></div>
+                  <span>SAMPLE OUTPUT</span>
+                </div>
+                <pre class="output-content wire">HTTP/1.1 302 Found
+Location: /
+Set-Cookie: peregrine_session=eyJ1c2VyIjoiYWRtaW4iLCJyb2xlIjoiYWRtaW5pc3RyYXRvciJ9.MTczNTY4OTYwMA.a8f93...; Path=/; HttpOnly; SameSite=Lax; Max-Age=3600
+Content-Length: 0
+Connection: close</pre>
+              </div>
+
+              <h3>Step 3: Access Protected Dashboard with Saved Cookie</h3>
+              <div class="code-block-wrapper">
+                <div class="code-header"><span class="code-lang-tag">Bash / curl</span><button class="copy-btn">Copy</button></div>
+                <pre class="code-content"><code>curl -i -b cookies.txt http://127.0.0.1:8080/dashboard</code></pre>
+              </div>
+              <div class="output-block-wrapper">
+                <div class="output-header">
+                  <div class="output-header-left"><div class="output-dots"><span class="output-dot red"></span><span class="output-dot yellow"></span><span class="output-dot green"></span></div><span class="output-tag">200 OK Authorized</span></div>
+                  <span>SAMPLE OUTPUT</span>
+                </div>
+                <pre class="output-content wire">HTTP/1.1 200 OK
+Content-Type: text/html; charset=utf-8
+Content-Length: 375
+Connection: close
+
+&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;title&gt;Dashboard&lt;/title&gt;&lt;/head&gt;&lt;body style=&#039;font-family: sans-serif; max-width: 600px; margin: 40px auto;&#039;&gt;  &lt;h1&gt;Dashboard&lt;/h1&gt;  &lt;p&gt;Welcome to the protected dashboard, &lt;strong&gt;admin&lt;/strong&gt; (administrator)!&lt;/p&gt;  &lt;p&gt;This page verified your HMAC-SHA256 cryptographically signed session cookie.&lt;/p&gt;  &lt;p&gt;&lt;a href=&#039;/&#039;&gt;Back to Home&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</pre>
+              </div>
+
+              <h3>Step 4: Inspect Session Debug JSON</h3>
+              <div class="code-block-wrapper">
+                <div class="code-header"><span class="code-lang-tag">Bash / curl</span><button class="copy-btn">Copy</button></div>
+                <pre class="code-content"><code>curl -s -b cookies.txt http://127.0.0.1:8080/session-debug</code></pre>
+              </div>
+              <div class="output-block-wrapper">
+                <div class="output-header">
+                  <div class="output-header-left"><div class="output-dots"><span class="output-dot red"></span><span class="output-dot yellow"></span><span class="output-dot green"></span></div><span class="output-tag">JSON Debug Output</span></div>
+                  <span>SAMPLE OUTPUT</span>
+                </div>
+                <pre class="output-content wire">{
+  "authenticated": true,
+  "data": {
+    "role": "administrator",
+    "user": "admin"
+  },
+  "modified": false,
+  "permanent": true
+}</pre>
+              </div>
+
+              <h3>Step 5: Sign Out and Invalidate Session</h3>
+              <div class="code-block-wrapper">
+                <div class="code-header"><span class="code-lang-tag">Bash / curl</span><button class="copy-btn">Copy</button></div>
+                <pre class="code-content"><code>curl -i -c cookies.txt -b cookies.txt -X POST http://127.0.0.1:8080/logout</code></pre>
+              </div>
+              <div class="output-block-wrapper">
+                <div class="output-header">
+                  <div class="output-header-left"><div class="output-dots"><span class="output-dot red"></span><span class="output-dot yellow"></span><span class="output-dot green"></span></div><span class="output-tag">302 Expired Cookie</span></div>
+                  <span>SAMPLE OUTPUT</span>
+                </div>
+                <pre class="output-content wire">HTTP/1.1 302 Found
+Location: /
+Set-Cookie: peregrine_session=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; Max-Age=0
+Content-Length: 0
+Connection: close</pre>
+              </div>
+
+            </div>
+
+            <div class="article-nav-grid">
+              <a href="#example-rest" class="article-nav-card prev">
+                <span class="article-nav-label">← Previous</span>
+                <span class="article-nav-title">02. RESTful Task API</span>
+              </a>
+              <a href="#example-templates" class="article-nav-card next">
+                <span class="article-nav-label">Next →</span>
+                <span class="article-nav-title">04. Mustache Templates</span>
+              </a>
+            </div>
+          </div>
+
+
+
+          <!-- ================================================================
+               ARTICLE: EXAMPLE 04 - TEMPLATES
+               ================================================================ -->
+          <div class="doc-article-content" data-doc-id="example-templates" data-category="Project Examples"
+            data-title="04. Mustache Template Rendering">
+            <header class="article-header">
+              <span class="article-badge">Example 04 • Beginner</span>
+              <h1 class="article-title">04. Mustache Template Rendering</h1>
+              <p class="article-lead">
+                Render dynamic, server-side HTML web applications using Peregrine&#039;s built-in single-pass Mustache template engine,
+                supporting scalar variable replacement, collection iteration loops, and in-memory dynamic string rendering.
+              </p>
+              <div class="article-meta">
+                <span>Directory: <code>examples/04_template_rendering/</code></span>
+                <span>•</span>
+                <span>Engine: Single-Pass Mustache</span>
+                <span>•</span>
+                <span>Files: <code>main.cpp</code> &amp; <code>templates/index.html</code></span>
+              </div>
+            </header>
+
+            <div class="rich-text">
+              <h2>Design &amp; Architecture of the Template Engine</h2>
+              <p>
+                Unlike bloated C++ template engines that require heavy AST compilation or external grammar tools, Peregrine
+                includes a clean, single-pass Mustache renderer designed for maximum throughput and zero external dependencies:
+              </p>
+              <ul>
+                <li><strong><code>peregrine::TemplateContext</code></strong>: Holds the data model as key-value pairs (scalars) and vector-of-maps (iterables).</li>
+                <li><strong>Scalar Replacement (<code>&#123;&#123;variable&#125;&#125;</code>)</strong>: Fast substring substitution for page titles, user profiles, or dates.</li>
+                <li><strong>Loop Iteration (<code>&#123;&#123;#each list_name&#125;&#125; ... &#123;&#123;this.property&#125;&#125; ... &#123;&#123;/each&#125;&#125;</code>)</strong>: Repeats HTML blocks for table rows, product grids, or list items.</li>
+                <li><strong>External File Rendering (<code>render_template(filepath, ctx)</code>)</strong>: Reads the template directly from the filesystem and renders the HTML.</li>
+                <li><strong>Inline String Rendering (<code>render_string(tmpl_str, ctx)</code>)</strong>: Compiles dynamic snippets on-the-fly directly in memory.</li>
+              </ul>
+
+              <h2>Directory Structure</h2>
+              <div class="code-block-wrapper">
+                <div class="code-header">
+                  <span class="code-lang-tag">Folder Layout</span>
+                  <button class="copy-btn">Copy</button>
+                </div>
+                <pre class="code-content"><code>examples/04_template_rendering/
+├── CMakeLists.txt        # Optional CMake target
+├── README.md             # Tutorial &amp; curl walkthrough
+├── main.cpp              # C++ Server Source (78 lines)
+└── templates/
+    └── index.html        # HTML Template with CSS Grid (90 lines)</code></pre>
+              </div>
+
+              <h2>C++ Server Source Code (<code>main.cpp</code>)</h2>
+              <div class="code-block-wrapper">
+                <div class="code-header">
+                  <span class="code-lang-tag">C++11 — examples/04_template_rendering/main.cpp</span>
+                  <button class="copy-btn">Copy</button>
+                </div>
+                <pre class="code-content"><code><span class="hl-comment">// SPDX-License-Identifier: Apache-2.0</span>
+<span class="hl-comment">// Copyright (c) 2026 Harshad Kanani. All rights reserved.</span>
+
+<span class="hl-preprocessor">#include</span> <span class="hl-string">&quot;peregrine/peregrine.hpp&quot;</span>
+<span class="hl-preprocessor">#include</span> <span class="hl-string">&lt;iostream&gt;</span>
+
+<span class="hl-keyword">using</span> <span class="hl-keyword">namespace</span> peregrine;
+
+<span class="hl-keyword">int</span> <span class="hl-function">main</span>() {
+    <span class="hl-type">App</span> app(<span class="hl-string">&quot;template_example_app&quot;</span>);
+
+<span class="hl-comment">    // ------------------------------------------------------------------------</span>
+<span class="hl-comment">    // GET / - Render template file from disk</span>
+<span class="hl-comment">    // ------------------------------------------------------------------------</span>
+    app.<span class="hl-function">get</span>(<span class="hl-string">&quot;/&quot;</span>, [](<span class="hl-type">Request</span>&amp;) {
+        <span class="hl-type">TemplateContext</span> ctx;
+
+<span class="hl-comment">        // 1. Set scalar variables</span>
+        ctx.<span class="hl-function">set</span>(<span class="hl-string">&quot;site_title&quot;</span>, <span class="hl-string">&quot;Peregrine Hardware Store&quot;</span>);
+        ctx.<span class="hl-function">set</span>(<span class="hl-string">&quot;user_name&quot;</span>, <span class="hl-string">&quot;Valued Customer&quot;</span>);
+        ctx.<span class="hl-function">set</span>(<span class="hl-string">&quot;current_year&quot;</span>, <span class="hl-string">&quot;2026&quot;</span>);
+
+<span class="hl-comment">        // 2. Append collection items for {{#each products}} loop</span>
+        ctx.<span class="hl-function">append</span>(<span class="hl-string">&quot;products&quot;</span>, {
+            {<span class="hl-string">&quot;name&quot;</span>, <span class="hl-string">&quot;Embedded ARM Linux Board&quot;</span>},
+            {<span class="hl-string">&quot;price&quot;</span>, <span class="hl-string">&quot;$49.99&quot;</span>},
+            {<span class="hl-string">&quot;category&quot;</span>, <span class="hl-string">&quot;Hardware&quot;</span>},
+            {<span class="hl-string">&quot;description&quot;</span>, <span class="hl-string">&quot;Ultra-low power quad-core board optimized for native C++ microservices.&quot;</span>}
+        });
+
+        ctx.<span class="hl-function">append</span>(<span class="hl-string">&quot;products&quot;</span>, {
+            {<span class="hl-string">&quot;name&quot;</span>, <span class="hl-string">&quot;Gigabit Ethernet Shield&quot;</span>},
+            {<span class="hl-string">&quot;price&quot;</span>, <span class="hl-string">&quot;$19.99&quot;</span>},
+            {<span class="hl-string">&quot;category&quot;</span>, <span class="hl-string">&quot;Networking&quot;</span>},
+            {<span class="hl-string">&quot;description&quot;</span>, <span class="hl-string">&quot;High-throughput network adapter with hardware offloading.&quot;</span>}
+        });
+
+        ctx.<span class="hl-function">append</span>(<span class="hl-string">&quot;products&quot;</span>, {
+            {<span class="hl-string">&quot;name&quot;</span>, <span class="hl-string">&quot;Industrial NVMe SSD 512GB&quot;</span>},
+            {<span class="hl-string">&quot;price&quot;</span>, <span class="hl-string">&quot;$79.99&quot;</span>},
+            {<span class="hl-string">&quot;category&quot;</span>, <span class="hl-string">&quot;Storage&quot;</span>},
+            {<span class="hl-string">&quot;description&quot;</span>, <span class="hl-string">&quot;Ruggedized flash memory designed for continuous telemetry logging.&quot;</span>}
+        });
+
+<span class="hl-comment">        // 3. Render template file</span>
+        <span class="hl-type">std::string</span> rendered = <span class="hl-function">render_template</span>(<span class="hl-string">&quot;examples/04_template_rendering/templates/index.html&quot;</span>, ctx);
+        <span class="hl-keyword">return</span> Response::html(rendered);
+    });
+
+<span class="hl-comment">    // ------------------------------------------------------------------------</span>
+<span class="hl-comment">    // GET /inline - Render dynamic template string directly in memory</span>
+<span class="hl-comment">    // ------------------------------------------------------------------------</span>
+    app.<span class="hl-function">get</span>(<span class="hl-string">&quot;/inline&quot;</span>, [](<span class="hl-type">Request</span>&amp; req) {
+        <span class="hl-type">std::string</span> name = req.<span class="hl-function">arg</span>(<span class="hl-string">&quot;name&quot;</span>, <span class="hl-string">&quot;Explorer&quot;</span>);
+
+        <span class="hl-type">TemplateContext</span> ctx;
+        ctx.<span class="hl-function">set</span>(<span class="hl-string">&quot;name&quot;</span>, name);
+
+        <span class="hl-type">std::string</span> tmpl = <span class="hl-string">&quot;&lt;h3&gt;Inline Template&lt;/h3&gt;&lt;p&gt;Hello, {{name}}! This string was rendered on-the-fly.&lt;/p&gt;&quot;</span>;
+        <span class="hl-keyword">return</span> Response::html(<span class="hl-function">render_string</span>(tmpl, ctx));
+    });
+
+<span class="hl-comment">    // Start server</span>
+    <span class="hl-keyword">const</span> <span class="hl-type">std::string</span> host = <span class="hl-string">&quot;127.0.0.1&quot;</span>;
+    <span class="hl-keyword">const</span> <span class="hl-keyword">int</span> port = <span class="hl-number">8080</span>;
+
+    <span class="hl-type">std::cout</span> &lt;&lt; <span class="hl-string">&quot;==================================================&quot;</span> &lt;&lt; <span class="hl-type">std::endl</span>;
+    <span class="hl-type">std::cout</span> &lt;&lt; <span class="hl-string">&quot;  Peregrine Template Rendering Demo&quot;</span> &lt;&lt; <span class="hl-type">std::endl</span>;
+    <span class="hl-type">std::cout</span> &lt;&lt; <span class="hl-string">&quot;  Listening on: http://&quot;</span> &lt;&lt; host &lt;&lt; <span class="hl-string">&quot;:&quot;</span> &lt;&lt; port &lt;&lt; <span class="hl-type">std::endl</span>;
+    <span class="hl-type">std::cout</span> &lt;&lt; <span class="hl-string">&quot;==================================================&quot;</span> &lt;&lt; <span class="hl-type">std::endl</span>;
+    <span class="hl-type">std::cout</span> &lt;&lt; <span class="hl-string">&quot;Available endpoints:&quot;</span> &lt;&lt; <span class="hl-type">std::endl</span>;
+    <span class="hl-type">std::cout</span> &lt;&lt; <span class="hl-string">&quot;  - GET http://&quot;</span> &lt;&lt; host &lt;&lt; <span class="hl-string">&quot;:&quot;</span> &lt;&lt; port &lt;&lt; <span class="hl-string">&quot;/&quot;</span> &lt;&lt; <span class="hl-type">std::endl</span>;
+    <span class="hl-type">std::cout</span> &lt;&lt; <span class="hl-string">&quot;  - GET http://&quot;</span> &lt;&lt; host &lt;&lt; <span class="hl-string">&quot;:&quot;</span> &lt;&lt; port &lt;&lt; <span class="hl-string">&quot;/inline?name=Alice&quot;</span> &lt;&lt; <span class="hl-type">std::endl</span>;
+
+    app.<span class="hl-function">run</span>(host, port);
+    <span class="hl-keyword">return</span> <span class="hl-number">0</span>;
+}
+</code></pre>
+              </div>
+
+              <h2>HTML Template Source Code (<code>templates/index.html</code>)</h2>
+              <div class="code-block-wrapper">
+                <div class="code-header">
+                  <span class="code-lang-tag">HTML5 — examples/04_template_rendering/templates/index.html</span>
+                  <button class="copy-btn">Copy</button>
+                </div>
+                <pre class="code-content"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;{{site_title}}&lt;/title&gt;
+    &lt;style&gt;
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            margin: 0;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #0f172a;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 12px;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 16px;
+            margin-top: 24px;
+        }
+        .card {
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 16px;
+            background: #ffffff;
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+        }
+        .price {
+            font-size: 1.25em;
+            font-weight: bold;
+            color: #16a34a;
+            margin: 8px 0;
+        }
+        .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            font-size: 0.8em;
+            border-radius: 4px;
+            background: #e0f2fe;
+            color: #0369a1;
+        }
+        footer {
+            margin-top: 40px;
+            font-size: 0.85em;
+            color: #64748b;
+            text-align: center;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;h1&gt;🦅 {{site_title}}&lt;/h1&gt;
+        &lt;p&gt;Welcome, &lt;strong&gt;{{user_name}}&lt;/strong&gt;! Below is the current catalog rendered using Peregrine&#039;s single-pass template engine.&lt;/p&gt;
+
+        &lt;h2&gt;Available Products&lt;/h2&gt;
+        &lt;div class=&quot;product-grid&quot;&gt;
+            {{#each products}}
+            &lt;div class=&quot;card&quot;&gt;
+                &lt;h3&gt;{{this.name}}&lt;/h3&gt;
+                &lt;div class=&quot;price&quot;&gt;{{this.price}}&lt;/div&gt;
+                &lt;div class=&quot;badge&quot;&gt;{{this.category}}&lt;/div&gt;
+                &lt;p style=&quot;font-size: 0.9em; color: #475569;&quot;&gt;{{this.description}}&lt;/p&gt;
+            &lt;/div&gt;
+            {{/each}}
+        &lt;/div&gt;
+
+        &lt;footer&gt;
+            &lt;p&gt;&amp;copy; {{current_year}} Peregrine C++ Web Framework. All rights reserved.&lt;/p&gt;
+        &lt;/footer&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+              </div>
+
+              <h2>Compilation Commands</h2>
+              <div class="code-block-wrapper">
+                <div class="code-header">
+                  <span class="code-lang-tag">Terminal Build Commands</span>
+                  <button class="copy-btn">Copy</button>
+                </div>
+                <pre class="code-content"><code># Linux &amp; macOS (GCC / Clang)
+g++ -std=c++11 -I include examples/04_template_rendering/main.cpp -lssl -lcrypto -lpthread -o templates_demo
+
+# Windows (MinGW PowerShell)
+g++ -std=c++11 -I include examples/04_template_rendering/main.cpp -lssl -lcrypto -lpthread -lws2_32 -o templates_demo.exe
+
+# Start the server (Must be executed from project root so templates/ path resolves)
+./templates_demo</code></pre>
+              </div>
+
+              <h2>Live Verification with curl &amp; Browser</h2>
+
+              <h3>1. Test External File Template Rendering (GET /)</h3>
+              <div class="code-block-wrapper">
+                <div class="code-header"><span class="code-lang-tag">Bash / curl</span><button class="copy-btn">Copy</button></div>
+                <pre class="code-content"><code>curl -i http://127.0.0.1:8080/</code></pre>
+              </div>
+              <div class="output-block-wrapper">
+                <div class="output-header">
+                  <div class="output-header-left"><div class="output-dots"><span class="output-dot red"></span><span class="output-dot yellow"></span><span class="output-dot green"></span></div><span class="output-tag">Rendered HTML Output</span></div>
+                  <span>SAMPLE OUTPUT</span>
+                </div>
+                <pre class="output-content wire">HTTP/1.1 200 OK
+Content-Type: text/html; charset=utf-8
+Content-Length: 2680
+Connection: close
+
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;&lt;title&gt;Peregrine Hardware Store&lt;/title&gt;...&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class="container"&gt;
+    &lt;h1&gt;🦅 Peregrine Hardware Store&lt;/h1&gt;
+    &lt;p&gt;Welcome, &lt;strong&gt;Valued Customer&lt;/strong&gt;! Below is the current catalog rendered using Peregrine's single-pass template engine.&lt;/p&gt;
+    &lt;div class="product-grid"&gt;
+      &lt;div class="card"&gt;
+        &lt;h3&gt;Embedded ARM Linux Board&lt;/h3&gt;
+        &lt;div class="price"&gt;$49.99&lt;/div&gt;
+        &lt;div class="badge"&gt;Hardware&lt;/div&gt;
+        &lt;p&gt;Ultra-low power quad-core board optimized for native C++ microservices.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class="card"&gt;
+        &lt;h3&gt;Gigabit Ethernet Shield&lt;/h3&gt;
+        &lt;div class="price"&gt;$19.99&lt;/div&gt;
+        &lt;div class="badge"&gt;Networking&lt;/div&gt;
+        &lt;p&gt;High-throughput network adapter with hardware offloading.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class="card"&gt;
+        &lt;h3&gt;Industrial NVMe SSD 512GB&lt;/h3&gt;
+        &lt;div class="price"&gt;$79.99&lt;/div&gt;
+        &lt;div class="badge"&gt;Storage&lt;/div&gt;
+        &lt;p&gt;Ruggedized flash memory designed for continuous telemetry logging.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;footer&gt;&lt;p&gt;&amp;copy; 2026 Peregrine C++ Web Framework. All rights reserved.&lt;/p&gt;&lt;/footer&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+              </div>
+
+              <h3>2. Test Dynamic In-Memory String Template (GET /inline)</h3>
+              <div class="code-block-wrapper">
+                <div class="code-header"><span class="code-lang-tag">Bash / curl</span><button class="copy-btn">Copy</button></div>
+                <pre class="code-content"><code>curl -i "http://127.0.0.1:8080/inline?name=Harshad"</code></pre>
+              </div>
+              <div class="output-block-wrapper">
+                <div class="output-header">
+                  <div class="output-header-left"><div class="output-dots"><span class="output-dot red"></span><span class="output-dot yellow"></span><span class="output-dot green"></span></div><span class="output-tag">Dynamic String Template Output</span></div>
+                  <span>SAMPLE OUTPUT</span>
+                </div>
+                <pre class="output-content wire">HTTP/1.1 200 OK
+Content-Type: text/html; charset=utf-8
+Content-Length: 79
+Connection: close
+
+&lt;h3&gt;Inline Template&lt;/h3&gt;&lt;p&gt;Hello, Harshad! This string was rendered on-the-fly.&lt;/p&gt;</pre>
+              </div>
+
+            </div>
+
+            <div class="article-nav-grid">
+              <a href="#example-auth" class="article-nav-card prev">
+                <span class="article-nav-label">← Previous</span>
+                <span class="article-nav-title">03. Auth &amp; Sessions</span>
+              </a>
+              <a href="#example-uploads" class="article-nav-card next">
+                <span class="article-nav-label">Next →</span>
+                <span class="article-nav-title">05. File Uploads</span>
+              </a>
+            </div>
+          </div>
+
+
+
+          <!-- ================================================================
+               ARTICLE: EXAMPLE 05 - FILE UPLOAD
+               ================================================================ -->
+          <div class="doc-article-content" data-doc-id="example-uploads" data-category="Project Examples"
+            data-title="05. Multipart File Uploads &amp; CWE-22 Defense">
+            <header class="article-header">
+              <span class="article-badge">Example 05 • Intermediate</span>
+              <h1 class="article-title">05. Multipart File Uploads &amp; CWE-22 Defense</h1>
+              <p class="article-lead">
+                Handle binary file submissions using standard RFC 7578 multipart/form-data, sanitize untrusted client filenames
+                against CWE-22 Path Traversal exploits, stream data directly to disk, and return detailed JSON inspection responses.
+              </p>
+              <div class="article-meta">
+                <span>Directory: <code>examples/05_file_upload/</code></span>
+                <span>•</span>
+                <span>Security: CWE-22 Path Traversal Defense</span>
+                <span>•</span>
+                <span>File: <code>main.cpp</code> (113 lines)</span>
+              </div>
+            </header>
+
+            <div class="rich-text">
+              <h2>Multipart Processing &amp; Security Architecture</h2>
+              <p>
+                Handling untrusted binary uploads in native C++ requires rigorous defensive programming. This example demonstrates:
+              </p>
+              <ul>
+                <li><strong>RFC 7578 Boundary Parsing</strong>: Peregrine automatically splits MIME boundaries, extracts headers, and populates <code>req.files</code> with <code>UploadedFile</code> structs.</li>
+                <li><strong>CWE-22 Path Traversal Sanitization</strong>: Untrusted clients can supply malicious filenames such as <code>../../etc/passwd</code> or <code>..\Windows\System32</code>. The <code>sanitize_filename()</code> function strips directory separators, replaces colons/null bytes with underscores, and purges leading dots.</li>
+                <li><strong>Binary Disk Persistence (<code>file.save(dest)</code>)</strong>: Streams the binary payload directly into the destination file without corruption or memory copying.</li>
+                <li><strong>Cross-Platform Compatibility</strong>: Uses conditional compilation for directory creation (<code>_mkdir()</code> on Windows vs. <code>mkdir()</code> on POSIX Linux/macOS).</li>
+              </ul>
+
+              <div class="flowchart-wrapper">
+                <div style="font-size: 0.8rem; font-weight: 600; color: var(--text-muted); margin-bottom: 8px;">
+                  Figure EX.5: RFC 7578 Multipart Processing Pipeline &amp; Sanitization Guard
+                </div>
+                <pre class="flowchart-content"><code>  HTTP Client --&gt; POST /upload (Content-Type: multipart/form-data; boundary=----WebKitFormBoundary...)
+                         |
+                         v
+                [ MIME Multipart Parser ]
+                Splits headers &amp; payloads
+                         |
+                         +--&gt; req.files: std::vector&lt;UploadedFile&gt;
+                                    |
+            +-----------------------+-----------------------+
+            |                                               |
+            v                                               v
+    Untrusted Filename:                             Sanitized Filename:
+    &quot;../../etc/passwd&quot;                              &quot;______etc_passwd&quot;
+    &quot;..\..\boot.ini&quot;                              &quot;______boot.ini&quot;
+            |                                               |
+            X [EXPLOIT PREVENTED!]                          v [SAFE WRITE]
+                                                    file.save(&quot;uploads/&quot; + safe_name)
+                                                            |
+                                                            v
+                                                    JSON Response (200 OK)</code></pre>
+              </div>
+
+              <h2>Directory Structure</h2>
+              <div class="code-block-wrapper">
+                <div class="code-header">
+                  <span class="code-lang-tag">Folder Layout</span>
+                  <button class="copy-btn">Copy</button>
+                </div>
+                <pre class="code-content"><code>examples/05_file_upload/
+├── CMakeLists.txt    # Optional CMake target
+├── README.md         # Upload tutorial &amp; security notes
+├── uploads/          # Generated directory for received binary files
+└── main.cpp          # Complete source code (113 lines)</code></pre>
+              </div>
+
+              <h2>Complete Source Code (<code>main.cpp</code>)</h2>
+              <div class="code-block-wrapper">
+                <div class="code-header">
+                  <span class="code-lang-tag">C++11 — examples/05_file_upload/main.cpp</span>
+                  <button class="copy-btn">Copy</button>
+                </div>
+                <pre class="code-content"><code><span class="hl-comment">// SPDX-License-Identifier: Apache-2.0</span>
+<span class="hl-comment">// Copyright (c) 2026 Harshad Kanani. All rights reserved.</span>
+
+<span class="hl-preprocessor">#include</span> <span class="hl-string">&quot;peregrine/peregrine.hpp&quot;</span>
+<span class="hl-preprocessor">#include</span> <span class="hl-string">&lt;iostream&gt;</span>
+<span class="hl-preprocessor">#include</span> <span class="hl-string">&lt;sstream&gt;</span>
+
+<span class="hl-preprocessor">#if</span> <span class="hl-string">defined(_WIN32)</span>
+<span class="hl-preprocessor">#include</span> <span class="hl-string">&lt;direct.h&gt;</span>
+<span class="hl-preprocessor">#define</span> <span class="hl-string">mkdir_compat(dir) _mkdir(dir)</span>
+<span class="hl-preprocessor">#else</span> <span class="hl-string"></span>
+<span class="hl-preprocessor">#include</span> <span class="hl-string">&lt;sys/stat.h&gt;</span>
+<span class="hl-preprocessor">#define</span> <span class="hl-string">mkdir_compat(dir) mkdir(dir, 0755)</span>
+<span class="hl-preprocessor">#endif</span> <span class="hl-string"></span>
+
+<span class="hl-keyword">using</span> <span class="hl-keyword">namespace</span> peregrine;
+
+<span class="hl-comment">// Sanitizes uploaded filenames to prevent Path Traversal attacks (CWE-22)</span>
+<span class="hl-type">std::string</span> <span class="hl-function">sanitize_filename</span>(<span class="hl-keyword">const</span> <span class="hl-type">std::string</span>&amp; input) {
+    <span class="hl-type">std::string</span> clean;
+    <span class="hl-keyword">for</span> (<span class="hl-keyword">char</span> c : input) {
+        <span class="hl-keyword">if</span> (c == <span class="hl-string">&#039;/&#039;</span> || c == <span class="hl-string">&#039;\\&#039;</span> || c == <span class="hl-string">&#039;:&#039;</span> || c == <span class="hl-string">&#039;\0&#039;</span>) {
+            clean += <span class="hl-string">&#039;_&#039;</span>;
+        } <span class="hl-keyword">else</span> {
+            clean += c;
+        }
+    }
+<span class="hl-comment">    // Remove leading dots or slashes</span>
+    <span class="hl-keyword">while</span> (!clean.<span class="hl-function">empty</span>() &amp;&amp; (clean.<span class="hl-function">front</span>() == <span class="hl-string">&#039;.&#039;</span> || clean.<span class="hl-function">front</span>() == <span class="hl-string">&#039; &#039;</span>)) {
+        clean.<span class="hl-function">erase</span>(clean.begin());
+    }
+    <span class="hl-keyword">return</span> clean.<span class="hl-function">empty</span>() ? <span class="hl-string">&quot;uploaded_file.bin&quot;</span> : clean;
+}
+
+<span class="hl-keyword">int</span> <span class="hl-function">main</span>() {
+    <span class="hl-type">App</span> app(<span class="hl-string">&quot;file_upload_app&quot;</span>);
+
+<span class="hl-comment">    // Ensure upload storage directory exists</span>
+    <span class="hl-function">mkdir_compat</span>(<span class="hl-string">&quot;uploads&quot;</span>);
+
+<span class="hl-comment">    // ------------------------------------------------------------------------</span>
+<span class="hl-comment">    // GET / - Upload Form Page</span>
+<span class="hl-comment">    // ------------------------------------------------------------------------</span>
+    app.<span class="hl-function">get</span>(<span class="hl-string">&quot;/&quot;</span>, [](<span class="hl-type">Request</span>&amp;) {
+        <span class="hl-type">std::string</span> <span class="hl-function">html</span> =
+            <span class="hl-string">&quot;&lt;!DOCTYPE html&gt;&quot;</span>
+            <span class="hl-string">&quot;&lt;html&gt;&quot;</span>
+            <span class="hl-string">&quot;&lt;head&gt;&lt;title&gt;Peregrine File Upload&lt;/title&gt;&lt;/head&gt;&quot;</span>
+            <span class="hl-string">&quot;&lt;body style=&#039;font-family: sans-serif; max-width: 600px; margin: 50px auto; line-height: 1.6;&#039;&gt;&quot;</span>
+            <span class="hl-string">&quot;  &lt;h1&gt;🦅 Peregrine File Upload Demo&lt;/h1&gt;&quot;</span>
+            <span class="hl-string">&quot;  &lt;p&gt;Select a file to upload using standard &lt;code&gt;multipart/form-data&lt;/code&gt;.&lt;/p&gt;&quot;</span>
+            <span class="hl-string">&quot;  &lt;form method=&#039;POST&#039; action=&#039;/upload&#039; enctype=&#039;multipart/form-data&#039; style=&#039;border: 2px dashed #94a3b8; padding: 24px; border-radius: 8px; text-align: center;&#039;&gt;&quot;</span>
+            <span class="hl-string">&quot;    &lt;input type=&#039;file&#039; name=&#039;file&#039; style=&#039;margin-bottom: 16px;&#039; required /&gt;&lt;br/&gt;&quot;</span>
+            <span class="hl-string">&quot;    &lt;button type=&#039;submit&#039; style=&#039;background: #0284c7; color: white; border: none; padding: 10px 20px; border-radius: 6px; font-weight: bold; cursor: pointer;&#039;&gt;Upload File&lt;/button&gt;&quot;</span>
+            <span class="hl-string">&quot;  &lt;/form&gt;&quot;</span>
+            <span class="hl-string">&quot;&lt;/body&gt;&quot;</span>
+            <span class="hl-string">&quot;&lt;/html&gt;&quot;</span>;
+        <span class="hl-keyword">return</span> Response::html(<span class="hl-function">html</span>);
+    });
+
+<span class="hl-comment">    // ------------------------------------------------------------------------</span>
+<span class="hl-comment">    // POST /upload - Process Multipart Upload</span>
+<span class="hl-comment">    // ------------------------------------------------------------------------</span>
+    app.<span class="hl-function">post</span>(<span class="hl-string">&quot;/upload&quot;</span>, [](<span class="hl-type">Request</span>&amp; req) {
+        <span class="hl-keyword">if</span> (req.files.<span class="hl-function">empty</span>()) {
+            <span class="hl-type">Json</span> err = Json::object();
+            err[<span class="hl-string">&quot;status&quot;</span>] = <span class="hl-string">&quot;error&quot;</span>;
+            err[<span class="hl-string">&quot;message&quot;</span>] = <span class="hl-string">&quot;No files found in request. Ensure form uses enctype=&#039;multipart/form-data&#039;.&quot;</span>;
+            <span class="hl-keyword">return</span> Response::json(err, <span class="hl-number">400</span>);
+        }
+
+        <span class="hl-type">Json</span> uploaded_files = Json::array();
+
+        <span class="hl-keyword">for</span> (<span class="hl-keyword">const</span> <span class="hl-keyword">auto</span>&amp; file : req.files) {
+            <span class="hl-type">std::string</span> safe_name = <span class="hl-function">sanitize_filename</span>(file.filename);
+            <span class="hl-type">std::string</span> destination = <span class="hl-string">&quot;uploads/&quot;</span> + safe_name;
+
+<span class="hl-comment">            // Persist binary payload to disk</span>
+            <span class="hl-keyword">bool</span> saved = file.<span class="hl-function">save</span>(destination);
+
+            <span class="hl-type">Json</span> file_info = Json::object();
+            file_info[<span class="hl-string">&quot;original_name&quot;</span>] = file.filename;
+            file_info[<span class="hl-string">&quot;safe_name&quot;</span>] = safe_name;
+            file_info[<span class="hl-string">&quot;content_type&quot;</span>] = file.content_type;
+            file_info[<span class="hl-string">&quot;size_bytes&quot;</span>] = static_cast&lt;<span class="hl-keyword">double</span>&gt;(file.<span class="hl-function">size</span>());
+            file_info[<span class="hl-string">&quot;saved_to&quot;</span>] = destination;
+            file_info[<span class="hl-string">&quot;success&quot;</span>] = saved;
+
+            uploaded_files.<span class="hl-function">push_back</span>(file_info);
+        }
+
+        <span class="hl-type">Json</span> response = Json::object();
+        response[<span class="hl-string">&quot;status&quot;</span>] = <span class="hl-string">&quot;success&quot;</span>;
+        response[<span class="hl-string">&quot;count&quot;</span>] = static_cast&lt;<span class="hl-keyword">double</span>&gt;(req.files.<span class="hl-function">size</span>());
+        response[<span class="hl-string">&quot;files&quot;</span>] = uploaded_files;
+
+        <span class="hl-keyword">return</span> Response::json(response, <span class="hl-number">200</span>);
+    });
+
+<span class="hl-comment">    // Start server</span>
+    <span class="hl-keyword">const</span> <span class="hl-type">std::string</span> host = <span class="hl-string">&quot;127.0.0.1&quot;</span>;
+    <span class="hl-keyword">const</span> <span class="hl-keyword">int</span> port = <span class="hl-number">8080</span>;
+
+    <span class="hl-type">std::cout</span> &lt;&lt; <span class="hl-string">&quot;==================================================&quot;</span> &lt;&lt; <span class="hl-type">std::endl</span>;
+    <span class="hl-type">std::cout</span> &lt;&lt; <span class="hl-string">&quot;  Peregrine File Upload Server Running&quot;</span> &lt;&lt; <span class="hl-type">std::endl</span>;
+    <span class="hl-type">std::cout</span> &lt;&lt; <span class="hl-string">&quot;  Listening on: http://&quot;</span> &lt;&lt; host &lt;&lt; <span class="hl-string">&quot;:&quot;</span> &lt;&lt; port &lt;&lt; <span class="hl-type">std::endl</span>;
+    <span class="hl-type">std::cout</span> &lt;&lt; <span class="hl-string">&quot;==================================================&quot;</span> &lt;&lt; <span class="hl-type">std::endl</span>;
+    <span class="hl-type">std::cout</span> &lt;&lt; <span class="hl-string">&quot;Open browser: http://&quot;</span> &lt;&lt; host &lt;&lt; <span class="hl-string">&quot;:&quot;</span> &lt;&lt; port &lt;&lt; <span class="hl-string">&quot;/&quot;</span> &lt;&lt; <span class="hl-type">std::endl</span>;
+
+    app.<span class="hl-function">run</span>(host, port);
+    <span class="hl-keyword">return</span> <span class="hl-number">0</span>;
+}
+</code></pre>
+              </div>
+
+              <h2>Compilation Commands</h2>
+              <div class="code-block-wrapper">
+                <div class="code-header">
+                  <span class="code-lang-tag">Terminal Build Commands</span>
+                  <button class="copy-btn">Copy</button>
+                </div>
+                <pre class="code-content"><code># Linux &amp; macOS (GCC / Clang)
+g++ -std=c++11 -I include examples/05_file_upload/main.cpp -lssl -lcrypto -lpthread -o file_upload
+
+# Windows (MinGW PowerShell)
+g++ -std=c++11 -I include examples/05_file_upload/main.cpp -lssl -lcrypto -lpthread -lws2_32 -o file_upload.exe
+
+# Start the server
+./file_upload</code></pre>
+              </div>
+
+              <h2>Live Verification &amp; Security Testing with curl</h2>
+
+              <h3>1. View Web Upload Form (GET /)</h3>
+              <div class="code-block-wrapper">
+                <div class="code-header"><span class="code-lang-tag">Bash / curl</span><button class="copy-btn">Copy</button></div>
+                <pre class="code-content"><code>curl -i http://127.0.0.1:8080/</code></pre>
+              </div>
+              <div class="output-block-wrapper">
+                <div class="output-header">
+                  <div class="output-header-left"><div class="output-dots"><span class="output-dot red"></span><span class="output-dot yellow"></span><span class="output-dot green"></span></div><span class="output-tag">Upload Form HTML</span></div>
+                  <span>SAMPLE OUTPUT</span>
+                </div>
+                <pre class="output-content wire">HTTP/1.1 200 OK
+Content-Type: text/html; charset=utf-8
+Content-Length: 462
+Connection: close
+
+&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;title&gt;Peregrine File Upload&lt;/title&gt;&lt;/head&gt;&lt;body style=&#039;font-family: sans-serif; max-width: 600px; margin: 50px auto; line-height: 1.6;&#039;&gt;  &lt;h1&gt;🦅 Peregrine File Upload Demo&lt;/h1&gt;  &lt;p&gt;Select a file to upload using standard &lt;code&gt;multipart/form-data&lt;/code&gt;.&lt;/p&gt;  &lt;form method=&#039;POST&#039; action=&#039;/upload&#039; enctype=&#039;multipart/form-data&#039;&gt;...&lt;/form&gt;&lt;/body&gt;&lt;/html&gt;</pre>
+              </div>
+
+              <h3>2. Upload a File Using curl (-F "file=@...")</h3>
+              <p>Create a temporary test file and submit it via multipart/form-data:</p>
+              <div class="code-block-wrapper">
+                <div class="code-header"><span class="code-lang-tag">Bash / curl</span><button class="copy-btn">Copy</button></div>
+                <pre class="code-content"><code>echo "Peregrine high-speed binary payload test" &gt; test_sample.txt
+curl -i -F "file=@test_sample.txt" http://127.0.0.1:8080/upload</code></pre>
+              </div>
+              <div class="output-block-wrapper">
+                <div class="output-header">
+                  <div class="output-header-left"><div class="output-dots"><span class="output-dot red"></span><span class="output-dot yellow"></span><span class="output-dot green"></span></div><span class="output-tag">200 OK Upload JSON Report</span></div>
+                  <span>SAMPLE OUTPUT</span>
+                </div>
+                <pre class="output-content wire">HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: 172
+Connection: close
+
+{
+  "count": 1,
+  "files": [
+    {
+      "content_type": "text/plain",
+      "original_name": "test_sample.txt",
+      "safe_name": "test_sample.txt",
+      "saved_to": "uploads/test_sample.txt",
+      "size_bytes": 41,
+      "success": true
+    }
+  ],
+  "status": "success"
+}</pre>
+              </div>
+
+              <h3>3. Path Traversal Attack Defense Verification</h3>
+              <p>
+                Simulate an attacker attempting to overwrite critical system files by specifying an escapist filename:
+              </p>
+              <div class="code-block-wrapper">
+                <div class="code-header"><span class="code-lang-tag">Bash / curl</span><button class="copy-btn">Copy</button></div>
+                <pre class="code-content"><code>curl -i -F "file=@test_sample.txt;filename=../../etc/passwd" http://127.0.0.1:8080/upload</code></pre>
+              </div>
+              <div class="output-block-wrapper">
+                <div class="output-header">
+                  <div class="output-header-left"><div class="output-dots"><span class="output-dot red"></span><span class="output-dot yellow"></span><span class="output-dot green"></span></div><span class="output-tag">Sanitized Safe Output</span></div>
+                  <span>SAMPLE OUTPUT</span>
+                </div>
+                <pre class="output-content wire">HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: 184
+Connection: close
+
+{
+  "count": 1,
+  "files": [
+    {
+      "content_type": "text/plain",
+      "original_name": "../../etc/passwd",
+      "safe_name": "______etc_passwd",
+      "saved_to": "uploads/______etc_passwd",
+      "size_bytes": 41,
+      "success": true
+    }
+  ],
+  "status": "success"
+}</pre>
+              </div>
+
+              <h3>4. Rejection of Empty Multipart Body</h3>
+              <div class="code-block-wrapper">
+                <div class="code-header"><span class="code-lang-tag">Bash / curl</span><button class="copy-btn">Copy</button></div>
+                <pre class="code-content"><code>curl -i -X POST http://127.0.0.1:8080/upload</code></pre>
+              </div>
+              <div class="output-block-wrapper">
+                <div class="output-header">
+                  <div class="output-header-left"><div class="output-dots"><span class="output-dot red"></span><span class="output-dot yellow"></span><span class="output-dot green"></span></div><span class="output-tag">400 Bad Request</span></div>
+                  <span>SAMPLE OUTPUT</span>
+                </div>
+                <pre class="output-content wire">HTTP/1.1 400 Bad Request
+Content-Type: application/json
+Content-Length: 98
+Connection: close
+
+{"message":"No files found in request. Ensure form uses enctype='multipart/form-data'.","status":"error"}</pre>
+              </div>
+
+            </div>
+
+            <div class="article-nav-grid">
+              <a href="#example-templates" class="article-nav-card prev">
+                <span class="article-nav-label">← Previous</span>
+                <span class="article-nav-title">04. Mustache Templates</span>
+              </a>
               <a href="#roadmap" class="article-nav-card next">
                 <span class="article-nav-label">Next →</span>
                 <span class="article-nav-title">Architectural Roadmap &amp; Benchmarks</span>
@@ -4804,9 +6829,9 @@ Content-Type: application/json
             </div>
 
             <div class="article-nav-grid">
-              <a href="#guide-spa" class="article-nav-card prev">
+              <a href="#example-uploads" class="article-nav-card prev">
                 <span class="article-nav-label">← Previous</span>
-                <span class="article-nav-title">Feature Recipe: SPA Frontend Hosting</span>
+                <span class="article-nav-title">05. Multipart File Uploads &amp; CWE-22</span>
               </a>
               <a href="#api-reference" class="article-nav-card next">
                 <span class="article-nav-label">Next →</span>
@@ -5104,6 +7129,7 @@ Content-Type: application/json
               class="footer-link">Issues</a>
             <a href="#module-app" class="footer-link">Modules</a>
             <a href="#guide-rest" class="footer-link">Recipes</a>
+            <a href="#examples-hub" class="footer-link">Examples</a>
             <a href="#roadmap" class="footer-link">Roadmap</a>
             <a href="#api-reference" class="footer-link">API Catalog</a>
           </div>
