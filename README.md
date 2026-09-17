@@ -1,4 +1,4 @@
-<table align="center"> <tr> <td align="center"> <img src="website/assets/logo.svg" width="80" height="80" alt="Peregrine++ Logo"> </td> <td align="center"> <h1>Peregrine++</h1> </td> </tr> </table>
+<table align="center"> <tr> <td align="center"> <img src="assets/logo.svg" width="80" height="80" alt="Peregrine++ Logo"> </td> <td align="center"> <h1>Peregrine++</h1> </td> </tr> </table>
 
 # Peregrine C++ Web Framework
 
