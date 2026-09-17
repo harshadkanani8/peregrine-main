@@ -46,13 +46,71 @@
   }
 
   // ==========================================================================
-  // Mobile Menu Toggle
+  // Mobile Menu & Backdrop Toggle
   // ==========================================================================
+  const sidebarBackdrop = document.getElementById("sidebarBackdrop");
+  const sideNavCloseBtn = document.getElementById("sideNavCloseBtn");
+
+  function openMobileNav() {
+    if (sideNav) sideNav.classList.add("mobile-open");
+    if (sidebarBackdrop) sidebarBackdrop.classList.add("active");
+    if (mobileMenuBtn) {
+      mobileMenuBtn.classList.add("active");
+      mobileMenuBtn.setAttribute("aria-expanded", "true");
+    }
+    document.body.classList.add("drawer-open");
+  }
+
+  function closeMobileNav() {
+    if (sideNav) sideNav.classList.remove("mobile-open");
+    if (sidebarBackdrop) sidebarBackdrop.classList.remove("active");
+    if (mobileMenuBtn) {
+      mobileMenuBtn.classList.remove("active");
+      mobileMenuBtn.setAttribute("aria-expanded", "false");
+    }
+    document.body.classList.remove("drawer-open");
+  }
+
   if (mobileMenuBtn && sideNav) {
     mobileMenuBtn.addEventListener("click", () => {
-      sideNav.classList.toggle("mobile-open");
+      if (sideNav.classList.contains("mobile-open")) {
+        closeMobileNav();
+      } else {
+        openMobileNav();
+      }
     });
   }
+
+  if (sideNavCloseBtn) {
+    sideNavCloseBtn.addEventListener("click", closeMobileNav);
+  }
+
+  if (sidebarBackdrop) {
+    sidebarBackdrop.addEventListener("click", closeMobileNav);
+  }
+
+  // Close drawer on pressing Escape key
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && sideNav && sideNav.classList.contains("mobile-open")) {
+      closeMobileNav();
+    }
+  });
+
+  // Auto-close drawer on clicking any sidebar navigation link on mobile
+  document.querySelectorAll(".layout-side-nav a").forEach((link) => {
+    link.addEventListener("click", () => {
+      if (window.innerWidth <= 992) {
+        closeMobileNav();
+      }
+    });
+  });
+
+  // Reset drawer state when window is resized past mobile breakpoint
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 992 && sideNav && sideNav.classList.contains("mobile-open")) {
+      closeMobileNav();
+    }
+  });
 
   // ==========================================================================
   // Sidebar Accordion
@@ -221,10 +279,23 @@
     const hash = window.location.hash.replace("#", "") || "home";
 
     // Close mobile nav on route change
-    if (sideNav) sideNav.classList.remove("mobile-open");
+    closeMobileNav();
 
-    // Update active nav links
+    // Update active nav links and auto-expand active accordion section
     document.querySelectorAll(".nav-item-link").forEach((link) => {
+      const target = link.getAttribute("href").replace("#", "");
+      const isMatch = target === hash;
+      link.classList.toggle("active", isMatch);
+      if (isMatch) {
+        const parentSection = link.closest(".nav-section");
+        if (parentSection && parentSection.classList.contains("collapsed")) {
+          parentSection.classList.remove("collapsed");
+        }
+      }
+    });
+
+    // Update active state on top navbar menu links
+    document.querySelectorAll(".nav-link").forEach((link) => {
       const target = link.getAttribute("href").replace("#", "");
       link.classList.toggle("active", target === hash);
     });
@@ -285,4 +356,22 @@
 
   window.addEventListener("hashchange", handleRoute);
   window.addEventListener("DOMContentLoaded", handleRoute);
+
+  // ==========================================================================
+  // Back to Top Floating Button
+  // ==========================================================================
+  const backToTopBtn = document.getElementById("backToTopBtn");
+  if (backToTopBtn) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 350) {
+        backToTopBtn.classList.add("visible");
+      } else {
+        backToTopBtn.classList.remove("visible");
+      }
+    }, { passive: true });
+
+    backToTopBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
 })();
