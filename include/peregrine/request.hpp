@@ -40,7 +40,7 @@ struct Request {
     std::string http_version = "HTTP/1.1";
 
     std::map<std::string, std::string> headers;      // Case-insensitive (keys stored in lower-case)
-    std::map<std::string, std::string> query;        // Query string parameters (request.args)
+    std::map<std::string, std::string> query;        // Query string parameters
     std::map<std::string, std::string> path_params;  // Matched URL parameters (e.g. <int:user_id>)
     std::map<std::string, std::string> cookies;      // Client cookies
     std::string body;                                // Raw request body
@@ -51,10 +51,10 @@ struct Request {
     // Uploaded files (from multipart/form-data)
     std::vector<UploadedFile> files;
 
-    // First-class session container (Peregrine-style SessionMixin)
+    // First-class session container
     Session session;
 
-    // Per-request application context storage (Peregrine-style `g` object)
+    // Per-request application context storage (g context map)
     std::map<std::string, std::string> g;
 
     // Connection metadata

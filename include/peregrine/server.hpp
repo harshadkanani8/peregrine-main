@@ -41,9 +41,7 @@
 namespace peregrine {
 namespace detail {
 
-inline SSL_CTX* create_ssl_context(const std::string& cert_file,
-                                  const std::string& key_file,
-                                  const std::string& tls_version = "TLS_1_2") {
+inline SSL_CTX* create_ssl_context(const ServerConfig& config) {
     OpenSSL_add_all_algorithms();
     SSL_load_error_strings();
     const SSL_METHOD* method = TLS_server_method();
@@ -54,7 +52,7 @@ inline SSL_CTX* create_ssl_context(const std::string& cert_file,
     }
 
     // Configure minimum TLS protocol version
-    if (tls_version == "TLS_1_3") {
+    if (config.tls_version == "TLS_1_3") {
 #ifdef TLS1_3_VERSION
         SSL_CTX_set_min_proto_version(ctx, TLS1_3_VERSION);
 #else
@@ -68,15 +66,67 @@ inline SSL_CTX* create_ssl_context(const std::string& cert_file,
 #endif
     }
 
-    if (SSL_CTX_use_certificate_file(ctx, cert_file.c_str(), SSL_FILETYPE_PEM) <= 0) {
-        std::cerr << "Error loading certificate: " << cert_file << "\n";
+    // Modern hardened SSL options (CRIME defense, renegotiation protection, server cipher preference)
+    long ssl_opts = 0;
+#ifdef SSL_OP_NO_COMPRESSION
+    ssl_opts |= SSL_OP_NO_COMPRESSION;
+#endif
+#ifdef SSL_OP_NO_RENEGOTIATION
+    ssl_opts |= SSL_OP_NO_RENEGOTIATION;
+#endif
+#ifdef SSL_OP_CIPHER_SERVER_PREFERENCE
+    ssl_opts |= SSL_OP_CIPHER_SERVER_PREFERENCE;
+#endif
+#ifdef SSL_OP_SINGLE_ECDH_USE
+    ssl_opts |= SSL_OP_SINGLE_ECDH_USE;
+#endif
+    ssl_opts |= config.ssl_options_flags;
+    if (ssl_opts != 0) {
+        SSL_CTX_set_options(ctx, ssl_opts);
+    }
+
+    // Supported Elliptic Curve Groups (e.g. "P-256")
+    if (!config.ssl_groups_list.empty()) {
+#if OPENSSL_VERSION_NUMBER >= 0x10101000L
+        if (SSL_CTX_set1_groups_list(ctx, config.ssl_groups_list.c_str()) <= 0) {
+            std::cerr << "Warning: Failed to set SSL groups list: " << config.ssl_groups_list << "\n";
+            ERR_print_errors_fp(stderr);
+        }
+#elif OPENSSL_VERSION_NUMBER >= 0x10002000L
+        if (SSL_CTX_set1_curves_list(ctx, config.ssl_groups_list.c_str()) <= 0) {
+            std::cerr << "Warning: Failed to set SSL curves list: " << config.ssl_groups_list << "\n";
+            ERR_print_errors_fp(stderr);
+        }
+#endif
+    }
+
+    // TLS <= 1.2 Cipher List (e.g. "ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384")
+    if (!config.ssl_cipher_list.empty()) {
+        if (SSL_CTX_set_cipher_list(ctx, config.ssl_cipher_list.c_str()) <= 0) {
+            std::cerr << "Warning: Failed to set SSL cipher list: " << config.ssl_cipher_list << "\n";
+            ERR_print_errors_fp(stderr);
+        }
+    }
+
+    // TLS 1.3 Ciphersuites (e.g. "TLS_AES_128_GCM_SHA256:TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256")
+    if (!config.ssl_ciphersuites.empty()) {
+#if defined(TLS1_3_VERSION) || OPENSSL_VERSION_NUMBER >= 0x10101000L
+        if (SSL_CTX_set_ciphersuites(ctx, config.ssl_ciphersuites.c_str()) <= 0) {
+            std::cerr << "Warning: Failed to set TLS 1.3 ciphersuites: " << config.ssl_ciphersuites << "\n";
+            ERR_print_errors_fp(stderr);
+        }
+#endif
+    }
+
+    if (SSL_CTX_use_certificate_file(ctx, config.cert_file.c_str(), SSL_FILETYPE_PEM) <= 0) {
+        std::cerr << "Error loading certificate: " << config.cert_file << "\n";
         ERR_print_errors_fp(stderr);
         SSL_CTX_free(ctx);
         return nullptr;
     }
 
-    if (SSL_CTX_use_PrivateKey_file(ctx, key_file.c_str(), SSL_FILETYPE_PEM) <= 0) {
-        std::cerr << "Error loading private key: " << key_file << "\n";
+    if (SSL_CTX_use_PrivateKey_file(ctx, config.key_file.c_str(), SSL_FILETYPE_PEM) <= 0) {
+        std::cerr << "Error loading private key: " << config.key_file << "\n";
         ERR_print_errors_fp(stderr);
         SSL_CTX_free(ctx);
         return nullptr;
@@ -89,6 +139,16 @@ inline SSL_CTX* create_ssl_context(const std::string& cert_file,
     }
 
     return ctx;
+}
+
+inline SSL_CTX* create_ssl_context(const std::string& cert_file,
+                                  const std::string& key_file,
+                                  const std::string& tls_version = "TLS_1_2") {
+    ServerConfig cfg;
+    cfg.cert_file = cert_file;
+    cfg.key_file = key_file;
+    cfg.tls_version = tls_version;
+    return create_ssl_context(cfg);
 }
 
 inline void parse_multipart(Request& req, const std::string& content_type_header) {

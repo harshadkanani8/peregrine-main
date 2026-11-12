@@ -6,7 +6,7 @@ A complete web authentication example demonstrating Peregrine's **stateless, cry
 
 ## How Peregrine Sessions Work
 
-Unlike traditional web servers that store session state in a server-side database (Redis, SQL, or in-memory hash tables), Peregrine uses **stateless client-side signed cookies** (similar to Flask / itsdangerous):
+Unlike traditional web servers that store session state in a server-side database (Redis, SQL, or in-memory hash tables), Peregrine uses **stateless client-side cryptographically signed cookies**:
 
 1. When you store data in `req.session["user"] = username`, Peregrine serializes the data into a Base64URL-encoded payload.
 2. It generates an HMAC-SHA256 signature using `app.secret_key`.

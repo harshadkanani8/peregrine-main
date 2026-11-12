@@ -47,6 +47,22 @@ struct ServerConfig {
     std::string key_file;
     std::string tls_version = "TLS_1_2"; // "TLS_1_2" or "TLS_1_3"
 
+    // Advanced SSL / TLS Cipher & Curve Configuration
+    std::string ssl_cipher_list;     // TLS <= 1.2 ciphers (e.g., "ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384")
+    std::string ssl_ciphersuites;    // TLS 1.3 ciphersuites (e.g., "TLS_AES_128_GCM_SHA256:TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256")
+    std::string ssl_groups_list;     // Elliptic curve groups / curves list (e.g., "P-256")
+    long ssl_options_flags = 0;      // Additional custom SSL_CTX options bitmask
+
+    // Convenience method to configure hardened ECDSA + P-256 cipher profile
+    void configure_ecdsa_p256_ciphers() {
+        ssl_groups_list = "P-256";
+        ssl_cipher_list = "ECDHE-ECDSA-AES128-GCM-SHA256:"
+                          "ECDHE-ECDSA-AES256-GCM-SHA384";
+        ssl_ciphersuites = "TLS_AES_128_GCM_SHA256:"
+                           "TLS_AES_256_GCM_SHA384:"
+                           "TLS_CHACHA20_POLY1305_SHA256";
+    }
+
     // Concurrency / performance options
     size_t max_body_size = 16 * 1024 * 1024;  // 16 MB default
     size_t thread_pool_size = 8;              // 8 worker threads default

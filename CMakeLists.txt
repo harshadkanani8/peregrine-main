@@ -28,10 +28,6 @@ add_library(peregrine_framework INTERFACE)
 add_library(peregrine::framework ALIAS peregrine_framework)
 add_library(peregrine::peregrine ALIAS peregrine_framework)
 
-# Backward-compatibility aliases
-add_library(flask_framework ALIAS peregrine_framework)
-add_library(flask::framework ALIAS peregrine_framework)
-
 target_include_directories(peregrine_framework INTERFACE
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>

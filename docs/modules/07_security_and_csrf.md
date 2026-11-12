@@ -68,7 +68,7 @@ In distributed web applications, tokens may be transmitted via HTML forms, AJAX 
 
 1. **Form Body Field**: `csrf_token` (e.g. `<input type="hidden" name="csrf_token" value="...">`)
 2. **HTTP Header**: `X-CSRF-Token` (standard frontend framework header)
-3. **HTTP Header**: `X-CSRFToken` (standard Django/Flask frontend convention)
+3. **HTTP Header**: `X-CSRFToken` (standard single-page app and REST frontend convention)
 4. **Query Parameter**: `?csrf_token=...`
 
 #### Injecting Tokens into Views:

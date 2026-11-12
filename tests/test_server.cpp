@@ -94,3 +94,56 @@ TEST_CASE(ServerSuite, HttpStatusReasonPhrase) {
     EXPECT_EQ(detail::status_reason(500), "Internal Server Error");
     EXPECT_EQ(detail::status_reason(503), "Service Unavailable");
 }
+
+TEST_CASE(ServerSuite, CreateSslContextWithHardenedCiphers) {
+    ServerConfig cfg;
+    cfg.cert_file = "non_existent_cert.pem";
+    cfg.key_file = "non_existent_key.pem";
+    cfg.configure_ecdsa_p256_ciphers();
+
+    // Verify configuration options are set properly
+    EXPECT_EQ(cfg.ssl_groups_list, "P-256");
+    EXPECT_EQ(cfg.ssl_cipher_list, "ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384");
+    EXPECT_EQ(cfg.ssl_ciphersuites, "TLS_AES_128_GCM_SHA256:TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256");
+
+    // Context creation should handle missing files safely by returning nullptr
+    SSL_CTX* ctx = detail::create_ssl_context(cfg);
+    EXPECT_TRUE(ctx == nullptr);
+}
+
+TEST_CASE(ServerSuite, CreateSslContextSuccessWithEcdsaCert) {
+    std::string cert_file = "test_ec_cert.pem";
+    std::string key_file = "test_ec_key.pem";
+
+    // Generate temporary self-signed ECDSA P-256 certificate for testing
+    std::string gen_cmd = "openssl req -x509 -newkey ec -pkeyopt ec_paramgen_curve:prime256v1 -nodes "
+                          "-keyout " + key_file + " -out " + cert_file + " -days 1 "
+                          "-subj \"/CN=localhost\" >/dev/null 2>&1";
+    int ret = std::system(gen_cmd.c_str());
+    if (ret == 0) {
+        ServerConfig cfg;
+        cfg.protocol = Protocol::HTTPS;
+        cfg.cert_file = cert_file;
+        cfg.key_file = key_file;
+        cfg.tls_version = "TLS_1_2";
+        cfg.configure_ecdsa_p256_ciphers();
+
+        SSL_CTX* ctx = detail::create_ssl_context(cfg);
+        EXPECT_TRUE(ctx != nullptr);
+        if (ctx) {
+            SSL_CTX_free(ctx);
+        }
+
+        // Test with TLS 1.3
+        cfg.tls_version = "TLS_1_3";
+        SSL_CTX* ctx_tls13 = detail::create_ssl_context(cfg);
+        EXPECT_TRUE(ctx_tls13 != nullptr);
+        if (ctx_tls13) {
+            SSL_CTX_free(ctx_tls13);
+        }
+
+        // Clean up temporary certificate files
+        std::remove(cert_file.c_str());
+        std::remove(key_file.c_str());
+    }
+}

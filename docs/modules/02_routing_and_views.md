@@ -104,7 +104,7 @@ app.route("/api/resource", {"GET", "POST"}, [](peregrine::Request& req) {
     }
 });
 
-// Flask-compatible syntax alias
+// Alternative route registration alias
 app.add_url_rule("/legacy/endpoint", {"GET", "POST"}, legacy_handler);
 ```
 

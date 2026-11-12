@@ -298,7 +298,7 @@ public:
 
         SSL_CTX* ssl_ctx = nullptr;
         if (config.protocol == Protocol::HTTPS) {
-            ssl_ctx = detail::create_ssl_context(config.cert_file, config.key_file, config.tls_version);
+            ssl_ctx = detail::create_ssl_context(config);
             if (!ssl_ctx) {
                 std::cerr << "Failed to initialize HTTPS context. Terminating.\n";
                 return;
@@ -444,7 +444,7 @@ private:
         req.remote_addr = std::move(remote_addr);
 
         // --------------------------------------------------------------------
-        // Open Session (mirrors Peregrine SecureCookieSessionInterface.open_session)
+        // Open Session: Cryptographic verification & key rotation
         // --------------------------------------------------------------------
         bool had_cookie = false;
         std::string cookie_name = config.get("SESSION_COOKIE_NAME", session_cookie_name);
@@ -508,7 +508,7 @@ private:
         }
 
         // --------------------------------------------------------------------
-        // Save Session (mirrors Peregrine SecureCookieSessionInterface.save_session)
+        // Save Session: Cryptographic signing & cookie serialization
         // --------------------------------------------------------------------
         if (!secret_key.empty()) {
             std::string cookie_path = config.get("SESSION_COOKIE_PATH", "/");
@@ -519,7 +519,7 @@ private:
             bool partitioned = config.get_bool("SESSION_COOKIE_PARTITIONED", false);
             int max_age = req.session.permanent ? lifetime : -1;
 
-            // Add "Vary: Cookie" header if session was accessed (mirrors Peregrine 3.1+)
+            // Add "Vary: Cookie" header if session was accessed (RFC 7234 cache control)
             if (req.session.accessed) {
                 res.set_header("Vary", "Cookie");
             }

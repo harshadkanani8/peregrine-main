@@ -46,7 +46,7 @@ struct Request;
 struct Response;
 
 // ============================================================================
-// 1. Session Container (mirrors Peregrine SessionMixin + SecureCookieSession)
+// 1. Session Container (Stateless HMAC-SHA256 session)
 // ============================================================================
 
 class Session {

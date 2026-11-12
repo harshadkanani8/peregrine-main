@@ -64,4 +64,27 @@ TEST_CASE(TypesSuite, ServerConfigDefaults) {
     EXPECT_EQ(cfg.thread_pool_size, static_cast<size_t>(8));
     EXPECT_EQ(cfg.max_queue_size, static_cast<size_t>(64));
     EXPECT_EQ(cfg.socket_timeout_seconds, 10);
+    EXPECT_EQ(cfg.ssl_cipher_list, "");
+    EXPECT_EQ(cfg.ssl_ciphersuites, "");
+    EXPECT_EQ(cfg.ssl_groups_list, "");
+    EXPECT_EQ(cfg.ssl_options_flags, 0L);
+}
+
+TEST_CASE(TypesSuite, ServerConfigSslCipherConfiguration) {
+    ServerConfig cfg;
+    cfg.ssl_groups_list = "P-256";
+    cfg.ssl_cipher_list = "ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384";
+    cfg.ssl_ciphersuites = "TLS_AES_128_GCM_SHA256:TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256";
+    cfg.ssl_options_flags = 0x10;
+
+    EXPECT_EQ(cfg.ssl_groups_list, "P-256");
+    EXPECT_EQ(cfg.ssl_cipher_list, "ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384");
+    EXPECT_EQ(cfg.ssl_ciphersuites, "TLS_AES_128_GCM_SHA256:TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256");
+    EXPECT_EQ(cfg.ssl_options_flags, 0x10L);
+
+    ServerConfig helper_cfg;
+    helper_cfg.configure_ecdsa_p256_ciphers();
+    EXPECT_EQ(helper_cfg.ssl_groups_list, "P-256");
+    EXPECT_EQ(helper_cfg.ssl_cipher_list, "ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384");
+    EXPECT_EQ(helper_cfg.ssl_ciphersuites, "TLS_AES_128_GCM_SHA256:TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256");
 }

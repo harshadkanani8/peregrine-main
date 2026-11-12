@@ -173,10 +173,27 @@ int main() {
 | `cert_file` | `std::string` | `""` | Path to PEM-encoded TLS certificate file. |
 | `key_file` | `std::string` | `""` | Path to PEM-encoded TLS private key file. |
 | `tls_version` | `std::string` | `"TLS_1_2"` | Minimum TLS version (`"TLS_1_2"` or `"TLS_1_3"`). |
+| `ssl_cipher_list` | `std::string` | `""` | TLS <= 1.2 cipher suite list (e.g. `ECDHE-ECDSA-AES128-GCM-SHA256:...`). |
+| `ssl_ciphersuites` | `std::string` | `""` | TLS 1.3 ciphersuites (e.g. `TLS_AES_128_GCM_SHA256:...`). |
+| `ssl_groups_list` | `std::string` | `""` | Elliptic curve groups/curves list (e.g. `"P-256"` or `"X25519:P-256"`). |
+| `ssl_options_flags` | `long` | `0` | Additional custom bitmask flags passed to `SSL_CTX_set_options`. |
 | `max_body_size`| `size_t` | `16777216` (16 MB) | Maximum permitted incoming request body size in bytes. |
 | `thread_pool_size` | `size_t` | `8` | Number of worker threads allocated at startup. |
 | `max_queue_size` | `size_t` | `64` | Maximum pending connections queued before rejecting load. |
 | `socket_timeout_seconds` | `int` | `10` | Read and write socket timeout in seconds. |
+
+#### Hardened ECDSA P-256 Cipher Helper
+
+For high-security environments using ECDSA certificates, call `cfg.configure_ecdsa_p256_ciphers()` to automatically enforce modern AEAD-only ciphers and P-256 key exchange:
+
+```cpp
+peregrine::ServerConfig cfg;
+cfg.protocol = peregrine::Protocol::HTTPS;
+cfg.cert_file = "cert.pem"; // ECDSA P-256 certificate
+cfg.key_file = "key.pem";
+cfg.tls_version = "TLS_1_3";
+cfg.configure_ecdsa_p256_ciphers(); // Sets P-256 curve, ECDHE-ECDSA TLS 1.2 ciphers, and modern TLS 1.3 ciphersuites
+```
 
 ---
 

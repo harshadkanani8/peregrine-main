@@ -267,7 +267,11 @@ config.host = "0.0.0.0";
 config.port = 443;
 config.cert_file = "/path/to/cert.pem";
 config.key_file = "/path/to/key.pem";
+config.tls_version = "TLS_1_3";
 config.max_body_size = 50 * 1024 * 1024; // 50 MB upload limit
+
+// Hardened ECDSA P-256 ciphers and curve restriction
+config.configure_ecdsa_p256_ciphers();
 
 app.run(config);
 ```
